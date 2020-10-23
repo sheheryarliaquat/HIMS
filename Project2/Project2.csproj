@@ -1,0 +1,785 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7C4B3BAA-D72C-4D74-9CF6-A09FE6A2CAAE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Project2</RootNamespace>
+    <AssemblyName>Project2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Design.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebDesign.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.3.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.3.9\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Chosen\chosen-sprite.png" />
+    <Content Include="Content\Chosen\chosen.css" />
+    <Content Include="Content\Chosen\chosen.min.css" />
+    <Content Include="Content\css\select2.css" />
+    <Content Include="Content\css\select2.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\Sitee.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="CSS\AdminCSS.css" />
+    <Content Include="CSS\assets\css\material-dashboard-rtl.css" />
+    <Content Include="CSS\assets\css\material-dashboard.css" />
+    <Content Include="CSS\assets\css\material-dashboard.min.css" />
+    <Content Include="CSS\assets\demo\demo.js" />
+    <Content Include="CSS\assets\img\angular.png" />
+    <Content Include="CSS\assets\img\apple-icon.png" />
+    <Content Include="CSS\assets\img\cover.jpg" />
+    <Content Include="CSS\assets\img\ex1.png" />
+    <Content Include="CSS\assets\img\ex2.png" />
+    <Content Include="CSS\assets\img\ex3.png" />
+    <Content Include="CSS\assets\img\faces\avatar.jpg" />
+    <Content Include="CSS\assets\img\faces\card-profile1-square.jpg" />
+    <Content Include="CSS\assets\img\faces\card-profile2-square.jpg" />
+    <Content Include="CSS\assets\img\faces\marc.jpg" />
+    <Content Include="CSS\assets\img\favicon.png" />
+    <Content Include="CSS\assets\img\html.png" />
+    <Content Include="CSS\assets\img\imac1.png" />
+    <Content Include="CSS\assets\img\ipad.png" />
+    <Content Include="CSS\assets\img\iPad2.png" />
+    <Content Include="CSS\assets\img\iphonex.png" />
+    <Content Include="CSS\assets\img\Macbook.png" />
+    <Content Include="CSS\assets\img\mask.png" />
+    <Content Include="CSS\assets\img\new_logo.png" />
+    <Content Include="CSS\assets\img\notification.png" />
+    <Content Include="CSS\assets\img\react.png" />
+    <Content Include="CSS\assets\img\sidebar-1.jpg" />
+    <Content Include="CSS\assets\img\sidebar-2.jpg" />
+    <Content Include="CSS\assets\img\sidebar-3.jpg" />
+    <Content Include="CSS\assets\img\sidebar-4.jpg" />
+    <Content Include="CSS\assets\img\table.png" />
+    <Content Include="CSS\assets\img\vue.png" />
+    <Content Include="CSS\assets\js\core\bootstrap-material-design.min.js" />
+    <Content Include="CSS\assets\js\core\jquery.min.js" />
+    <Content Include="CSS\assets\js\core\popper.min.js" />
+    <Content Include="CSS\assets\js\material-dashboard.js" />
+    <Content Include="CSS\assets\js\material-dashboard.min.js" />
+    <Content Include="CSS\assets\js\plugins\arrive.min.js" />
+    <Content Include="CSS\assets\js\plugins\bootstrap-datetimepicker.min.js" />
+    <Content Include="CSS\assets\js\plugins\bootstrap-notify.js" />
+    <Content Include="CSS\assets\js\plugins\bootstrap-selectpicker.js" />
+    <Content Include="CSS\assets\js\plugins\bootstrap-tagsinput.js" />
+    <Content Include="CSS\assets\js\plugins\chartist.min.js" />
+    <Content Include="CSS\assets\js\plugins\fullcalendar.min.js" />
+    <Content Include="CSS\assets\js\plugins\jasny-bootstrap.min.js" />
+    <Content Include="CSS\assets\js\plugins\jquery-jvectormap.js" />
+    <Content Include="CSS\assets\js\plugins\jquery.bootstrap-wizard.js" />
+    <Content Include="CSS\assets\js\plugins\jquery.dataTables.min.js" />
+    <Content Include="CSS\assets\js\plugins\jquery.tagsinput.js" />
+    <Content Include="CSS\assets\js\plugins\jquery.validate.min.js" />
+    <Content Include="CSS\assets\js\plugins\moment.min.js" />
+    <Content Include="CSS\assets\js\plugins\nouislider.min.js" />
+    <Content Include="CSS\assets\js\plugins\perfect-scrollbar.jquery.min.js" />
+    <Content Include="CSS\assets\js\plugins\sweetalert2.js" />
+    <Content Include="CSS\Custon-Cs.css" />
+    <Content Include="CSS\Login.css" />
+    <Content Include="CSS\UserLoginCSS.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\741411.jpg" />
+    <Content Include="Images\arid.png" />
+    <Content Include="Images\blood-1813410_1920.jpg" />
+    <Content Include="Images\client.jpg" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\LoginImage.jpg" />
+    <Content Include="Images\plum-4917370_1920.jpg" />
+    <Content Include="Images\team.png" />
+    <Content Include="Images\vaccine-4892048_1920.jpg" />
+    <Content Include="Images\work.png" />
+    <Content Include="Java Script\AdminJS.js" />
+    <Content Include="Models\PathologyModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PathologyModel.edmx</DependentUpon>
+      <LastGenOutput>PathologyModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PathologyModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PathologyModel.edmx</DependentUpon>
+      <LastGenOutput>PathologyModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\autocomplete-0.3.0\autocomplete-0.3.0.css" />
+    <Content Include="Scripts\autocomplete-0.3.0\autocomplete-0.3.0.js" />
+    <Content Include="Scripts\autocomplete-0.3.0\autocomplete-0.3.0.min.css" />
+    <Content Include="Scripts\autocomplete-0.3.0\autocomplete-0.3.0.min.js" />
+    <Content Include="Scripts\autocomplete-0.3.0\LICENSE.txt" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\PathologyModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PathologyModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PathologyModel.edmx.diagram">
+      <DependentUpon>PathologyModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Pathology_dbDataSet2.xsc">
+      <DependentUpon>Pathology_dbDataSet2.xsd</DependentUpon>
+    </Content>
+    <Content Include="CSS\assets\css\material-dashboard.css.map" />
+    <Content Include="CSS\assets\js\material-dashboard.js.map" />
+    <Content Include="CSS\assets\scss\material-dashboard.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\bootstrap.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_background-variant.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_badge.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_float.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_grid-framework.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_hover.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_nav-divider.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_navbar-align.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_screen-reader.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_size.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_table-row.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_text-emphasis.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_text-hide.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\mixins\_visibility.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\utilities\_align.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\utilities\_background.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\utilities\_borders.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\utilities\_clearfix.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\utilities\_display.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\utilities\_embed.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\utilities\_flex.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\utilities\_float.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\utilities\_position.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\utilities\_screenreaders.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\utilities\_sizing.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\utilities\_spacing.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\utilities\_text.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\utilities\_visibility.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_alert.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_badge.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_button-group.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_buttons.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_card.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_carousel.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_close.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_code.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_custom-forms.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_dropdown.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_forms.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_functions.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_grid.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_images.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_input-group.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_jumbotron.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_list-group.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_media.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_mixins.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_modal.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_nav.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_navbar.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_pagination.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_popover.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_print.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_progress.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_reboot.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_root.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_tables.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_tooltip.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_transitions.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_type.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_utilities.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\bootstrap\scss\_variables.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\cards\_card-plain.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\cards\_card-profile.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\cards\_card-stats.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_alert.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_animations.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_breakpoints.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_buttons.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_chartist.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_colored-shadows.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_drawer.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_forms.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_hover.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_layout.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_navbar-colors.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_navs.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_sidebar-color.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_transparency.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_type.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_utilities.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_variables.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\mixins\_vendor-prefixes.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\plugins\_animate.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\plugins\_chartist.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\plugins\_perfect-scrollbar.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_body.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_bootstrap-material-design-base.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_bootstrap-material-design.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_brand.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_buttons.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_card.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_code.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_colors-map.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_colors.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_custom-forms.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_drawer.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_dropdown.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_forms.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_layout.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_list-group.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_menu.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_modals.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_nav.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_pagination.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_shadow.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_snackbar.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_spacing.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_state.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_tables.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_tooltip.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\variables\_type.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_alerts.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_buttons.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_cards.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_checkboxes.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_core-bootstrap.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_dropdown.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_example-pages.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_fixed-plugin.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_footers.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_forms.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_headers.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_images.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_info-areas.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_input-group.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_misc.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_mixins.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_navbar.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_popover.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_popups.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_radios.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_responsive.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_ripples.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_sidebar-and-main-panel.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_social-buttons.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_tables.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_tabs.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_togglebutton.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_tooltip.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_type.scss" />
+    <Content Include="CSS\assets\scss\material-dashboard\_variables.scss" />
+    <Content Include="DataSet.xsc">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DataSet.xss">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Pathology_dbDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Pathology_dbDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Pathology_dbDataSet2.xss">
+      <DependentUpon>Pathology_dbDataSet2.xsd</DependentUpon>
+    </Content>
+    <Content Include="Procedreu.xsc">
+      <DependentUpon>Procedreu.xsd</DependentUpon>
+    </Content>
+    <None Include="Procedreu.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Procedreu.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Procedreu.xss">
+      <DependentUpon>Procedreu.xsd</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\chosen.jquery.min.js" />
+    <Content Include="Scripts\i18n\af.js" />
+    <Content Include="Scripts\i18n\ar.js" />
+    <Content Include="Scripts\i18n\az.js" />
+    <Content Include="Scripts\i18n\bg.js" />
+    <Content Include="Scripts\i18n\bn.js" />
+    <Content Include="Scripts\i18n\bs.js" />
+    <Content Include="Scripts\i18n\ca.js" />
+    <Content Include="Scripts\i18n\cs.js" />
+    <Content Include="Scripts\i18n\da.js" />
+    <Content Include="Scripts\i18n\de.js" />
+    <Content Include="Scripts\i18n\dsb.js" />
+    <Content Include="Scripts\i18n\el.js" />
+    <Content Include="Scripts\i18n\en.js" />
+    <Content Include="Scripts\i18n\es.js" />
+    <Content Include="Scripts\i18n\et.js" />
+    <Content Include="Scripts\i18n\eu.js" />
+    <Content Include="Scripts\i18n\fa.js" />
+    <Content Include="Scripts\i18n\fi.js" />
+    <Content Include="Scripts\i18n\fr.js" />
+    <Content Include="Scripts\i18n\gl.js" />
+    <Content Include="Scripts\i18n\he.js" />
+    <Content Include="Scripts\i18n\hi.js" />
+    <Content Include="Scripts\i18n\hr.js" />
+    <Content Include="Scripts\i18n\hsb.js" />
+    <Content Include="Scripts\i18n\hu.js" />
+    <Content Include="Scripts\i18n\hy.js" />
+    <Content Include="Scripts\i18n\id.js" />
+    <Content Include="Scripts\i18n\is.js" />
+    <Content Include="Scripts\i18n\it.js" />
+    <Content Include="Scripts\i18n\ja.js" />
+    <Content Include="Scripts\i18n\ka.js" />
+    <Content Include="Scripts\i18n\km.js" />
+    <Content Include="Scripts\i18n\ko.js" />
+    <Content Include="Scripts\i18n\lt.js" />
+    <Content Include="Scripts\i18n\lv.js" />
+    <Content Include="Scripts\i18n\mk.js" />
+    <Content Include="Scripts\i18n\ms.js" />
+    <Content Include="Scripts\i18n\nb.js" />
+    <Content Include="Scripts\i18n\ne.js" />
+    <Content Include="Scripts\i18n\nl.js" />
+    <Content Include="Scripts\i18n\pl.js" />
+    <Content Include="Scripts\i18n\ps.js" />
+    <Content Include="Scripts\i18n\pt-BR.js" />
+    <Content Include="Scripts\i18n\pt.js" />
+    <Content Include="Scripts\i18n\ro.js" />
+    <Content Include="Scripts\i18n\ru.js" />
+    <Content Include="Scripts\i18n\sk.js" />
+    <Content Include="Scripts\i18n\sl.js" />
+    <Content Include="Scripts\i18n\sq.js" />
+    <Content Include="Scripts\i18n\sr-Cyrl.js" />
+    <Content Include="Scripts\i18n\sr.js" />
+    <Content Include="Scripts\i18n\sv.js" />
+    <Content Include="Scripts\i18n\th.js" />
+    <Content Include="Scripts\i18n\tk.js" />
+    <Content Include="Scripts\i18n\tr.js" />
+    <Content Include="Scripts\i18n\uk.js" />
+    <Content Include="Scripts\i18n\vi.js" />
+    <Content Include="Scripts\i18n\zh-CN.js" />
+    <Content Include="Scripts\i18n\zh-TW.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\notify.min.js" />
+    <Content Include="Scripts\select2.js" />
+    <Content Include="Scripts\select2.min.js" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LabController.cs" />
+    <Compile Include="Controllers\OPDController.cs" />
+    <Compile Include="Controllers\ProcedureController.cs" />
+    <Compile Include="DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PathologyModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PathologyModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PathologyModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PathologyModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PathologyModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PatientDetails.cs" />
+    <Compile Include="Models\procedureReport_Result.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Procedure_slip.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_CONSULTANT.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBl_CONS_FEE.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_Gender.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_MASTER_PROCEDURE.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_MASTER_PRO_ENTRY.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_MPROC_DETAIL.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_ORGINATION.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_PAY_MAST.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_PROCEDURE_CAT.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_R_CAT.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_R_DEPT.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_R_PANEL.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_R_PATIENT.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_R_RECEIPT.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_R_TEST.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_USER_D.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VIEW_LAB.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_Visit.cs">
+      <DependentUpon>PathologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pathology_dbDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pathology_dbDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Procedreu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Procedreu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout1.cshtml" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Home\AdminDashboard.cshtml" />
+    <Content Include="Views\Home\Departments.cshtml" />
+    <Content Include="Views\Home\Add_Departments.cshtml" />
+    <Content Include="Views\Home\Edit_Departments.cshtml" />
+    <Content Include="Views\Home\Consultants.cshtml" />
+    <Content Include="Views\Home\Add_Consultants.cshtml" />
+    <Content Include="Views\Home\Edit_Consultants.cshtml" />
+    <Content Include="Views\Home\List_Patients.cshtml" />
+    <Content Include="Views\Home\Edit_Patient.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Home\my.cshtml" />
+    <Content Include="Views\Home\index.cshtml" />
+    <Content Include="Views\Home\Patient_Visit - Copy.cshtml" />
+    <Content Include="Views\Home\Patient_Visit.cshtml" />
+    <Content Include="Views\Home\Patient_slip.cshtml" />
+    <Content Include="Views\Procedure\Index.cshtml" />
+    <Content Include="Views\Procedure\Entry_Proc.cshtml" />
+    <Content Include="Views\Procedure\Entry_Proc - Copy.cshtml" />
+    <Content Include="Views\Procedure\order.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin - Copy.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\OPD\Index.cshtml" />
+    <Content Include="Views\Shared\Lab.cshtml" />
+    <Content Include="Views\Lab\DashBoard.cshtml" />
+    <Content Include="Views\Lab\WORKLOAD.cshtml" />
+    <Content Include="Views\OPD\TechData.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Admin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report\ProSlip.rdlc" />
+    <EmbeddedResource Include="Report\Report1.rdlc" />
+    <EmbeddedResource Include="Report\Report_Patient.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50366</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50366/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

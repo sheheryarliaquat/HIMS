@@ -1,0 +1,571 @@
+﻿@model Project2.Models.TBL_MASTER_PROCEDURE
+
+@{
+    ViewBag.Title = "Procedure Entry";
+Layout = "~/Views/Shared/_Layout.cshtml";
+  //  Layout = null;
+}
+
+
+    <form id="NewOrderForm">
+
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title"> Patient Information</h4>
+                        <p class="card-category">Complete your profile</p>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.TBL_R_PATIENT.MR_NO, htmlAttributes: new { @class = "bmd-label-floating" })
+                                    @Html.EditorFor(model => model.TBL_R_PATIENT.MR_NO, new { htmlAttributes = new { @class = "form-control", id = "MR" } })
+                                    @Html.ValidationMessageFor(model => model.TBL_R_PATIENT.MR_NO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.TBL_R_PATIENT.TEL_NO, htmlAttributes: new { @class = "bmd-label-floating" })
+                                    @Html.EditorFor(model => model.TBL_R_PATIENT.TEL_NO, new { htmlAttributes = new { @class = "form-control", id = "telNo" } })
+                                    @Html.ValidationMessageFor(model => model.TBL_R_PATIENT.TEL_NO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" id="search"><i class="fa fa-search"></i> Search</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.TBL_R_PATIENT.FIRST_NAME, htmlAttributes: new { @class = "bmd-label-floating" })
+                                    @Html.EditorFor(model => model.TBL_R_PATIENT.FIRST_NAME, new { htmlAttributes = new { @class = "form-control", id = "name" } })
+                                    @Html.ValidationMessageFor(model => model.TBL_R_PATIENT.FIRST_NAME, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.TBL_R_PATIENT.F_NAME, htmlAttributes: new { @class = "bmd-label-floating" })
+                                    @Html.EditorFor(model => model.TBL_R_PATIENT.F_NAME, new { htmlAttributes = new { @class = "form-control", id = "fname" } })
+                                    @Html.ValidationMessageFor(model => model.TBL_R_PATIENT.F_NAME, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.TBL_R_PATIENT.AGE, htmlAttributes: new { @class = "bmd-label-floating" })
+                                    @Html.EditorFor(model => model.TBL_R_PATIENT.AGE, new { htmlAttributes = new { @class = "form-control", id = "age" } })
+                                    @Html.ValidationMessageFor(model => model.TBL_R_PATIENT.AGE, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.TBL_R_PATIENT.DATEOFBIRTH, htmlAttributes: new { @class = "bmd-label-floating" })
+                                    @Html.EditorFor(model => model.TBL_R_PATIENT.DATEOFBIRTH, new { htmlAttributes = new { @class = "form-control", id = "dob" } })
+                                    @Html.ValidationMessageFor(model => model.TBL_R_PATIENT.DATEOFBIRTH, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.TBL_R_PATIENT.GENDER, htmlAttributes: new { @class = "bmd-label-floating" })
+                                    @Html.DropDownListFor(model => model.TBL_R_PATIENT.GENDER, ViewBag.gendr as SelectList, "..Select Gender..", new { @class = "form-control", id = "gender" })
+                                    @Html.ValidationMessageFor(model => model.TBL_R_PATIENT.GENDER, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.TBL_R_PATIENT.CNIC_NO, htmlAttributes: new { @class = "bmd-label-floating" })
+                                    @Html.EditorFor(model => model.TBL_R_PATIENT.CNIC_NO, new { htmlAttributes = new { @class = "form-control", id = "nic" } })
+                                    @Html.ValidationMessageFor(model => model.TBL_R_PATIENT.CNIC_NO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.TBL_R_PATIENT.ADDRESS1, htmlAttributes: new { @class = "bmd-label-floating" })
+                                    @Html.EditorFor(model => model.TBL_R_PATIENT.ADDRESS1, new { htmlAttributes = new { @class = "form-control", id = "address" } })
+                                    @Html.ValidationMessageFor(model => model.TBL_R_PATIENT.ADDRESS1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title"> Procedure Order</h4>
+                        <p class="card-category">Complete your profile</p>
+                    </div>
+                    <div >
+
+                        <div class="modal-body">
+                            @*Customer Details*@
+                            <h5 style="color:#ff6347">Customer Details</h5>
+                            <hr />
+                            <div class="form-horizontal">
+                                <input type="hidden" id="CustomerId" />
+                                <div class="form-group">
+                                    @*<label class="control-label col-md-2">
+                    Customer Name
+                </label>*@
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <input type="text" id="mrR" name="name" placeholder="MR No" class="form-control" />
+
+
+                                        </div>
+                                        @*<div class="col-md-4">
+                        <input type="text" id="cons" name="address" placeholder=" CONS ID" class="form-control" />
+                    </div>*@
+                                        <div class="col-md-4">
+                                            @Html.DropDownListFor(model => model.MP_CONS, ViewBag.consultants as SelectList, "..Select Consultants..", new { @class = "form-control", id = "cons" })
+                                        </div>
+                                        <div class="col-md-4">
+
+                                            @Html.DropDownListFor(model => model.MP_CONS, ViewBag.panel as SelectList, "..Select Panel..", new { @class = "form-control", id = "P_ID" })
+
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+                            @*Order Details*@
+                            <h5 style="margin-top:10px;color:#ff6347">Order Details</h5>
+                            <hr />
+                            <div class="form-horizontal">
+                                <input type="hidden" id="OrderId" />
+                                <div>
+                                    <div class="row">
+
+                                        <div class="col-md-4">
+                                            @*<input type="text" id="productName" name="productName" placeholder="Product Name" class="form-control" />*@
+                                            <select id="productName" style="width:250px"> </select>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <input type="number" id="price" name="price" placeholder="price" class="form-control"  readonly />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="number" id="quantity" name="quantity" placeholder="Quantity" class="form-control" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="number" id="code" name="Code" placeholder="Code" class="form-control" />
+                                        </div>
+                                        @*<div class="col-md-2">
+            <input type="number" id="Amount" name="Amount" placeholder="Amount" class="form-control" />
+        </div>*@
+                                        <div class="col-md-2">
+                                            <a id="addToList" class="btn btn-danger">Add</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    @*<div class="col-md-2">
+                                        <a id="addToList" class="btn btn-danger">Add To List</a>
+                                    </div>*@
+
+                                </div>
+
+                                <table id="detailsTable" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:10%">Code</th>
+                                            <th style="width:30%">Product</th>
+                                            <th style="width:15%">Quantity</th>
+                                            <th style="width:15%">Unit Price</th>
+                                            <th style="width:15%">Amount</th>
+                                            <th style="width:10%"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                            <div class="form-horizontal">
+                                <input type="hidden" id="CustomerId" />
+                                <div class="form-group">
+                                    @*<label class="control-label col-md-2">
+                    Customer Name
+                </label>*@
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <input type="text" id="total_Ampunt" name="name" placeholder="total_Ampunt" class="form-control"  readonly/>
+
+
+                                        </div>
+                       
+                                    <div class="col-md-4">
+                                       
+                                        <input type="text" id="discount" name="name" placeholder="discount" class="form-control" />
+                                       
+                                    </div>
+                                    <div class="col-md-4">
+
+                                        <input type="text" id="gratn_taoal" name="name" placeholder="gratn_taoal" class="form-control" />
+                                    </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <select class="Country" style="width:400px" multiple>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="save">Confirm</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="reset" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button id="saveOrder" type="submit" class="btn btn-danger">Save Order</button>
+            <button type="button" class="btn btn-default active" onclick="location.href='@Url.Action("Reporting", "Procedure", new { id = 257 }))'">Financial</button>
+        </div>
+    </form>
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+<script>
+
+
+ 
+
+    //Add Multiple Order.
+     $("#addToList").click(function (e)
+    {
+        e.preventDefault();
+        if ($.trim($("#productName").val()) == "" || $.trim($("#price").val()) == "" || $.trim($("#quantity").val()) == "") return;
+        var productName = $("#productName").val(),
+            price = $("#price").val(),
+            quantity = $("#quantity").val(),
+            code = $("#code").val(),
+            detailsTableBody = $("#detailsTable tbody");
+        var productItem = '<tr><td>' + code + '</td><td>' + productName + '</td><td>' + quantity + '</td><td>' + price + '</td><td>' + (parseFloat(price) * parseInt(quantity)) + '</td><td><a data-itemId="0" href="#" class="deleteItem">Remove</a></td></tr>';
+               detailsTableBody.append(productItem);
+
+
+            var table = document.getElementById("detailsTable"), sumVal = 0;
+            for(var i = 1; i < table.rows.length; i++)
+            {
+                sumVal = sumVal + parseInt(table.rows[i].cells[4].innerHTML);
+               }
+
+
+               document.getElementById("total_Ampunt").value = sumVal;
+               document.getElementById("discount").value = 0;
+               document.getElementById("productName").value = null;
+
+            //console.log(sumVal);
+
+
+        clearItem();
+     });
+
+    $("#quantity").keypress(function (e)
+    {
+        e.preventDefault();
+        if ($.trim($("#productName").val()) == "" || $.trim($("#price").val()) == "" || $.trim($("#quantity").val()) == "") return;
+        var productName = $("#productName").val(),
+            price = $("#price").val(),
+            quantity = $("#quantity").val(),
+            code = $("#code").val(),
+            detailsTableBody = $("#detailsTable tbody");
+        var productItem = '<tr><td>' + code + '</td><td>' + productName + '</td><td>' + quantity + '</td><td>' + price + '</td><td>' + (parseFloat(price) * parseInt(quantity)) + '</td><td><a data-itemId="0" href="#" class="deleteItem">Remove</a></td></tr>';
+               detailsTableBody.append(productItem);
+
+
+            var table = document.getElementById("detailsTable"), sumVal = 0;
+            for(var i = 1; i < table.rows.length; i++)
+            {
+                sumVal = sumVal + parseInt(table.rows[i].cells[4].innerHTML);
+               }
+
+
+               document.getElementById("total_Ampunt").value = sumVal;
+               document.getElementById("discount").value = 0;
+               document.getElementById("productName").value = null;
+
+            //console.log(sumVal);
+
+
+        clearItem();
+           });
+
+
+
+     $("#discount").change(function ()
+    {
+       
+        var am =  document.getElementById("total_Ampunt").value;
+      
+        var dis = document.getElementById("discount").value;
+        var tot = am - dis;
+        
+        document.getElementById("gratn_taoal").value = tot;
+
+    });
+   
+    //After Add A New Order In The List, Clear Clean The Form For Add More Order.
+    function clearItem() {
+        $("#productName").val('');
+        $("#price").val('');
+        $("#quantity").val('');
+    }
+    // After Add A New Order In The List, If You Want, You Can Remove It.
+     $(document).on('click', 'a.deleteItem', function (e) {
+        e.preventDefault();
+        var $self = $(this);
+        if ($(this).attr('data-itemId') == "0") {
+            $(this).parents('tr').css("background-color", "#ff6347").fadeOut(800, function () {
+                $(this).remove();
+            });
+        }
+    });
+    //After Click Save Button Pass All Data View To Controller For Save Database
+    function saveOrder(data)
+    {
+        return $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: "/Procedure/SaveOrder",
+            data: data,
+            success: function (result)
+            {
+                alert(result);
+                location.reload();
+            },
+            error: function () {
+                alert("Data Not Saved")
+            }
+        });
+    }
+    //Collect Multiple Order List For Pass To Controller
+    $("#saveOrder").click(function (e)
+    {
+        e.preventDefault();
+
+        var orderArr = [];
+        orderArr.length = 0;
+
+        $.each($("#detailsTable tbody tr"), function () {
+            orderArr.push({
+                pro_id: $(this).find('td:eq(0)').html(),
+                quantity: $(this).find('td:eq(2)').html(),
+                price: $(this).find('td:eq(3)').html(),
+                amount: $(this).find('td:eq(4)').html()
+            });
+        });
+
+
+        var data = JSON.stringify({
+            mr: $("#MR").val(),
+            cons: $("#cons").val(),
+            order: orderArr
+        });
+
+        $.when(saveOrder(data)).then(function (response)
+        {
+            console.log(response);
+        }).fail(function (err)
+        {
+            console.log(err);
+        });
+    });
+    $(document).ready(function ()
+    {
+    $(".Country").select2({
+                placeholder: "Conatact Number ",
+                theme: "classic",
+                ajax:
+                {
+
+                    url: '/Home/PatientData',
+                    dataType: 'json',
+                    data: function (params)
+                    {
+                        return {
+                            searchTerm: params.term
+                        };
+                    },
+                    processResults: function (data, params) {
+                        return {
+                            results: data
+                        };
+                    }
+                }
+        });
+    $("#productName").select2({
+                placeholder: "Procedure Name ",
+                theme: "classic",
+                ajax:
+                {
+
+                    url: '/Procedure/ProcedureENT',
+                    dataType: 'json',
+                    data: function (params)
+                    {
+                        return {
+                            searchTerm: params.term
+                        };
+                    },
+                    processResults: function (data, params) {
+                        return {
+                             
+                            results: data
+                         
+                        };
+                        
+                    }
+                    }
+         });
+    $("#productName").change(function ()
+  {
+     
+            var mr = $("#productName").val();
+           
+            $.ajax({
+                url: "/Procedure/getprocedure?MRNO=" + mr,
+                method: "POST",
+                datatype: "json",
+                success: function (data)
+                {
+                    console.log(data);
+                    //var data = JSON.parse(data);
+                   // $("#price").text(data[0].price);
+                    //alert((data[0].price));
+                    // console.log((data[0].price));
+                    document.getElementById("price").value = (data[0].price);
+                    document.getElementById("quantity").value = "1";
+                    document.getElementById("code").value = (data[0].id);
+                   
+                },
+                error: function (err) { console.error(err) }
+            });
+
+        });
+
+
+        $("#age").change(function ()
+        {
+            var ag = $('#age').val();
+            var date = new Date();
+           $("#dob").val((date.getMonth()) + '/' + (date.getDate() ) + '/' + (date.getFullYear() -ag));
+        });
+        $("#MR").change(function ()
+        {
+            
+            var mr = $("#MR").val();
+           
+            $.ajax({
+                url: "/Home/getDatapatient?MRNO=" + mr,
+                method: "POST",
+                datatype: "json",
+                success: function (data)
+                {
+                    var data = JSON.parse(data);
+                    alert(data);
+                    $(".FFname").text(data[0].Name);
+                    document.getElementById("name").value = (data[0].name);
+                    document.getElementById("fname").value = (data[0].fname);
+                    document.getElementById("telNo").value = (data[0].telno);
+                    document.getElementById("gn").value = (data[0].gn);
+                    document.getElementById("nic").value = (data[0].nic);
+                    document.getElementById("dob").value = (data[0].dob);
+                    $(".telNo").text(data.Name);
+                },
+                error: function (err) { console.error(err) }
+            });
+
+        });
+
+    });
+           $("#search").click(function ()
+            {
+                 document.getElementById("name").value = "";
+                        document.getElementById("fname").value = "";
+                        document.getElementById("telNo").value = "";
+                        document.getElementById("dob").value = "";
+                        document.getElementById("gn").value = "";
+                 document.getElementById("nic").value = "";
+
+         });
+           $("#MR").change(function ()
+        {
+            
+            var mr = $("#MR").val();
+           
+            $.ajax({
+                url: "/Home/getDatapatient?MRNO=" + mr,
+                method: "POST",
+                datatype: "json",
+                success: function (data)
+                {
+                    //alert("1");
+                    //var data = JSON.parse(data);
+                    //$(".FFname").text(data[0].Name);
+                    document.getElementById("MR").value = (data[0].id);
+                    document.getElementById("name").value = (data[0].name);
+                    document.getElementById("fname").value = (data[0].fname);
+                    document.getElementById("telNo").value = (data[0].telno);
+                    document.getElementById("nic").value = (data[0].nic);
+                    document.getElementById("dob").value = (data[0].dob);
+                    document.getElementById("age").value = (data[0].age);
+                    document.getElementById("gn").value = (data[0].gn);
+                    $(".telNo").text(data.Name);
+                },
+                error: function (err) { console.error(err) }
+            });
+
+        });
+    
+</script>

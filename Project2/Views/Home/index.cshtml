@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = " Showing Data Using jQuery Ajax Call JSON in ASP.NET MVC";
+    Layout = null;
+}
+    <html>
+    <head>
+
+        <link href="~/Content/css/select2.css" rel="stylesheet" />
+        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+        <script src="~/Scripts/select2.min.js"></script>
+        <script>
+            $(document).ready(function ()
+            {
+                $(".Country").select2({
+                    placeholder: "country",
+                    theme: "classic",
+                    ajax:
+                    {
+                                 
+            url: '/Home/PatientData',
+                        dataType: 'json',
+                        data: function (params) {
+                            return {
+                                searchTerm: params.term
+                            };
+                            },
+                            processResults: function(data, params) {
+                                return {
+                                    results: data
+                                };
+                            }
+                        }
+                   });
+              
+                });
+
+           
+        </script>
+    </head>
+    <body>
+
+    <select class="Country" style="width:500px">
+
+    </select>
+    </body>
+    </html>
+
+

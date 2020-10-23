@@ -1,0 +1,2874 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Pathology_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TBl_CONS_FEE">
+          <Key>
+            <PropertyRef Name="fee_id" />
+          </Key>
+          <Property Name="fee_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fee_name" Type="varchar" MaxLength="50" />
+          <Property Name="fee_Fee" Type="int" />
+          <Property Name="fee_status" Type="int" />
+          <Property Name="fee_org" Type="int" />
+          <Property Name="fee_user" Type="int" />
+          <Property Name="user_date" Type="date" />
+          <Property Name="fee_cons" Type="int" />
+        </EntityType>
+        <EntityType Name="TBL_CONSULTANT">
+          <Key>
+            <PropertyRef Name="CON_JOB_ID" />
+          </Key>
+          <Property Name="CON_JOB_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CON_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="CON_FEE" Type="int" />
+          <Property Name="CD" Type="int" />
+          <Property Name="CTFEE" Type="int" />
+          <Property Name="DEGREE" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ER_FEE" Type="int" />
+          <Property Name="SP_VISIT" Type="int" />
+          <Property Name="STATUS" Type="int" />
+          <Property Name="FELLOW_UP" Type="int" />
+          <Property Name="DESG" Type="nvarchar" MaxLength="1000" />
+          <Property Name="DOC_SHARE" Type="int" />
+          <Property Name="DEP_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="TBL_Gender">
+          <Key>
+            <PropertyRef Name="G_id" />
+          </Key>
+          <Property Name="G_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="G_name" Type="varchar" MaxLength="50" />
+          <Property Name="G_status" Type="int" />
+        </EntityType>
+        <EntityType Name="TBL_MASTER_PRO_ENTRY">
+          <Key>
+            <PropertyRef Name="PRO_ID" />
+          </Key>
+          <Property Name="PRO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PRO_NAME" Type="varchar" MaxLength="500" />
+          <Property Name="PRO_CAT" Type="int" />
+          <Property Name="PRO_DISCOUNT" Type="int" />
+          <Property Name="PRO_AMOUNT" Type="int" />
+          <Property Name="PRO_PRICE" Type="int" />
+          <Property Name="PRO_EXPENSE" Type="int" />
+          <Property Name="PRO_TYPE" Type="int" />
+          <Property Name="PRO_HEAD" Type="int" />
+          <Property Name="PRO_ORG" Type="int" />
+          <Property Name="PRO_USER_ID" Type="int" />
+          <Property Name="PRO_USER_DATE" Type="datetime" />
+          <Property Name="PRO_REFERANGE" Type="varchar" MaxLength="500" />
+          <Property Name="PRO_MEASUREMENT_UNIT" Type="varchar" MaxLength="500" />
+          <Property Name="PRO_SAMPLE" Type="varchar" MaxLength="500" />
+          <Property Name="PRO_SPECIMEN" Type="varchar" MaxLength="500" />
+          <Property Name="PRO_PANEL_TYPE" Type="int" />
+          <Property Name="PRO_CODE" Type="int" />
+          <Property Name="pro_shift" Type="int" />
+          <Property Name="PRO_CONS" Type="int" />
+          <Property Name="PRO_STATE" Type="int" />
+        </EntityType>
+        <EntityType Name="TBL_MASTER_PROCEDURE">
+          <Key>
+            <PropertyRef Name="MP_CODE" />
+          </Key>
+          <Property Name="MP_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MP_DATE" Type="datetime" />
+          <Property Name="MR" Type="int" />
+          <Property Name="MP_NETAMOUNT" Type="int" />
+          <Property Name="MP_DISCOUNT_ID" Type="int" />
+          <Property Name="MP_DISCOUNT_PER" Type="int" />
+          <Property Name="MP_DIS_AMOUNT" Type="int" />
+          <Property Name="MP_GRANT_TOTAL" Type="int" />
+          <Property Name="MP_PIAD_AMOUNT" Type="int" />
+          <Property Name="MP_BLALANCE" Type="int" />
+          <Property Name="MP_USER_dATE" Type="datetime" />
+          <Property Name="MP_USER_ORG" Type="int" />
+          <Property Name="MP_USER_ID" Type="int" />
+          <Property Name="MP_USER_MPCODE" Type="int" />
+          <Property Name="MP_CLEAR_DATE" Type="datetime" />
+          <Property Name="MP_STATUS" Type="int" />
+          <Property Name="MP_STATUS_DATE" Type="datetime" />
+          <Property Name="MP_STATUS_USER_ID" Type="int" />
+          <Property Name="MP_STATUS_USER_DATE" Type="datetime" />
+          <Property Name="MP_PANEL" Type="int" />
+          <Property Name="MP_AMOUNT" Type="int" />
+          <Property Name="MP_PANEL_PAID" Type="int" />
+          <Property Name="MP_REM_PANEL" Type="int" />
+          <Property Name="MP_SHIFT" Type="int" />
+          <Property Name="MP_SHIFT_ID" Type="int" />
+          <Property Name="MP_CONS" Type="int" />
+          <Property Name="MP_SHARE_AMOUNT" Type="int" />
+          <Property Name="MP_SHARE_CONS" Type="int" />
+          <Property Name="MP_SHARED_PAID_STATUS" Type="int" />
+          <Property Name="MP_SHARED_DATE" Type="datetime" />
+          <Property Name="MP_SHARED_USER_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="TBL_MPROC_DETAIL">
+          <Key>
+            <PropertyRef Name="MPD_ID" />
+          </Key>
+          <Property Name="MPD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MP_CODE" Type="int" />
+          <Property Name="MR" Type="int" />
+          <Property Name="MPD_SAMPLE_ID" Type="int" />
+          <Property Name="MPD_SAMPLE_YN" Type="int" />
+          <Property Name="MPD_user_id" Type="varchar" MaxLength="500" />
+          <Property Name="MPD_USER_ORG" Type="int" />
+          <Property Name="MPD_USER_DATE" Type="datetime" />
+          <Property Name="MPD_USER_NAME" Type="varchar" MaxLength="500" />
+          <Property Name="MPD_LAB_NO" Type="int" />
+          <Property Name="MPD_CAT" Type="int" />
+          <Property Name="MPD_PERFORMED" Type="int" />
+          <Property Name="MPD_DOCYN" Type="int" />
+          <Property Name="MPD_DOC_ID" Type="int" />
+          <Property Name="MPD_DOC_DATE" Type="datetime" />
+          <Property Name="MPD_DOC_REMARKS" Type="varchar" MaxLength="500" />
+          <Property Name="MPD_REPORT" Type="varchar" MaxLength="500" />
+          <Property Name="MPD_SAMPLE_SATATUS" Type="int" />
+          <Property Name="MPD_REFER" Type="int" />
+          <Property Name="MPD_P_USER_ID" Type="int" />
+          <Property Name="MPD_P_USERDATE" Type="datetime" />
+          <Property Name="MPD_TECH_ID" Type="int" />
+          <Property Name="MPD_TECH_DATE" Type="datetime" />
+          <Property Name="MPD_order_id" Type="int" />
+          <Property Name="pro_id" Type="int" />
+          <Property Name="pro_amount" Type="int" />
+          <Property Name="pro_discount" Type="int" />
+          <Property Name="PRICE" Type="int" />
+          <Property Name="MPD_QTY" Type="int" />
+          <Property Name="MPD_AMOUNT" Type="int" />
+        </EntityType>
+        <EntityType Name="TBL_ORGINATION">
+          <Key>
+            <PropertyRef Name="ORG_ID" />
+          </Key>
+          <Property Name="ORG_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORGNAME" Type="varchar" MaxLength="500" />
+          <Property Name="ORG_AVBRIVATION" Type="varchar" MaxLength="500" />
+          <Property Name="ORG_ADDRESS" Type="varchar" MaxLength="500" />
+          <Property Name="ORG_PHONE" Type="varchar" MaxLength="500" />
+          <Property Name="ORG_LOCATION" Type="varchar" MaxLength="500" />
+          <Property Name="ORG_LOGO" Type="varchar" MaxLength="500" />
+          <Property Name="ORG_VISSION" Type="varchar" MaxLength="500" />
+          <Property Name="ORG_EMAIL" Type="varchar" MaxLength="500" />
+          <Property Name="ORG_A" Type="varchar" MaxLength="500" />
+          <Property Name="ORG_B" Type="varchar" MaxLength="500" />
+          <Property Name="ORG_C" Type="varchar" MaxLength="500" />
+          <Property Name="ORG_CODE" Type="varchar" MaxLength="500" />
+          <Property Name="ORG_BARCH" Type="varchar" MaxLength="500" />
+          <Property Name="ORG_HEAD" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TBL_PAY_MAST">
+          <Key>
+            <PropertyRef Name="EMP_CODE" />
+          </Key>
+          <Property Name="EMP_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMP_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMP_FNAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMP_MNAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="SEX_MF" Type="nvarchar" MaxLength="10" />
+          <Property Name="EMP_CELL" Type="int" />
+          <Property Name="BIRTH_DATE" Type="date" />
+          <Property Name="ID_CARD" Type="int" />
+          <Property Name="EMP_PHONE" Type="int" />
+          <Property Name="EMP_EMAIL" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMP_POSADD" Type="nvarchar" MaxLength="1000" />
+          <Property Name="EMP_RELIGION" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMP_SECT" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMP_CAST" Type="nvarchar" MaxLength="500" />
+          <Property Name="ID_EXP" Type="date" />
+          <Property Name="EMP_DESG" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMP_PIC" Type="int" />
+          <Property Name="DEP_CODE" Type="int" />
+          <Property Name="JOIN_DATE" Type="date" />
+          <Property Name="GROSS_SAL" Type="int" />
+          <Property Name="INCOME_TAX" Type="int" />
+          <Property Name="EMP_TAXNO" Type="int" />
+          <Property Name="EMP_ACCNO" Type="nvarchar" MaxLength="50" />
+          <Property Name="REC_DATE" Type="date" />
+          <Property Name="TERMINAT" Type="nvarchar" MaxLength="500" />
+          <Property Name="NET_SLRY" Type="int" />
+          <Property Name="INC_PAY" Type="int" />
+          <Property Name="CITY_CODE" Type="int" />
+          <Property Name="GROUP_CODE" Type="int" />
+          <Property Name="RSG_DATE" Type="date" />
+          <Property Name="PAY_TYPE" Type="nvarchar" MaxLength="200" />
+          <Property Name="STATION" Type="nvarchar" MaxLength="500" />
+          <Property Name="EOBI" Type="int" />
+          <Property Name="CMP_CODE" Type="int" />
+          <Property Name="ETP_CODE" Type="int" />
+          <Property Name="AUTOTAX" Type="nvarchar" MaxLength="500" />
+          <Property Name="B_CODE" Type="int" />
+          <Property Name="APPYN" Type="nvarchar" MaxLength="50" />
+          <Property Name="SALCODE" Type="int" />
+          <Property Name="SOCIALYN" Type="nvarchar" MaxLength="50" />
+          <Property Name="EOBIYN" Type="nvarchar" MaxLength="50" />
+          <Property Name="USRID" Type="int" />
+          <Property Name="USTTY" Type="nvarchar" MaxLength="500" />
+          <Property Name="SYS_DATE" Type="date" />
+          <Property Name="D_CODE" Type="int" />
+          <Property Name="EMPADD" Type="nvarchar" MaxLength="1500" />
+          <Property Name="MESSDED" Type="int" />
+          <Property Name="OVERGB" Type="nvarchar" MaxLength="50" />
+          <Property Name="SHIFT_DATE" Type="date" />
+          <Property Name="SHTIME_I" Type="date" />
+          <Property Name="SHTIME_O" Type="date" />
+          <Property Name="WEEK_OFF" Type="nvarchar" MaxLength="50" />
+          <Property Name="AUTOEXP" Type="nvarchar" MaxLength="50" />
+          <Property Name="CONYN" Type="nvarchar" MaxLength="50" />
+          <Property Name="SOCIALNO" Type="int" />
+          <Property Name="CON_DATE" Type="date" />
+          <Property Name="BELONG" Type="nvarchar" MaxLength="50" />
+          <Property Name="EOBINO" Type="int" />
+          <Property Name="FACTYN" Type="nvarchar" MaxLength="50" />
+          <Property Name="ALI_DATE" Type="date" />
+          <Property Name="EMP_REF" Type="nvarchar" MaxLength="500" />
+          <Property Name="CARDNO" Type="int" />
+          <Property Name="HEALTH" Type="int" />
+          <Property Name="FAX_NO" Type="int" />
+          <Property Name="EMNATI" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMDDIS" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMDPRO" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMPTEH" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMPDIS" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMPPRO" Type="nvarchar" MaxLength="500" />
+          <Property Name="PREADD" Type="nvarchar" MaxLength="2000" />
+          <Property Name="PRETEH" Type="nvarchar" MaxLength="500" />
+          <Property Name="PREDIS" Type="nvarchar" MaxLength="500" />
+          <Property Name="PREPRO" Type="nvarchar" MaxLength="500" />
+          <Property Name="FACTD" Type="nvarchar" MaxLength="500" />
+          <Property Name="POSDIS" Type="nvarchar" MaxLength="500" />
+          <Property Name="POSPRO" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMMARI" Type="nvarchar" MaxLength="500" />
+          <Property Name="RSGTYP" Type="nvarchar" MaxLength="500" />
+          <Property Name="BANK_ACC" Type="nvarchar" MaxLength="200" />
+          <Property Name="E1" Type="nvarchar" MaxLength="1500" />
+          <Property Name="E2" Type="nvarchar" MaxLength="1500" />
+          <Property Name="E3" Type="nvarchar" MaxLength="1500" />
+          <Property Name="EX" Type="nvarchar" MaxLength="1500" />
+          <Property Name="OLDCOD" Type="int" />
+          <Property Name="MACCOD" Type="nvarchar" MaxLength="50" />
+          <Property Name="TCODE" Type="int" />
+          <Property Name="NCODE" Type="int" />
+          <Property Name="PMDREG" Type="nvarchar" MaxLength="500" />
+          <Property Name="PMDEXP" Type="date" />
+          <Property Name="FACREG" Type="nvarchar" MaxLength="500" />
+          <Property Name="FACEXP" Type="date" />
+          <Property Name="SHTYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMPTIT" Type="nvarchar" MaxLength="500" />
+          <Property Name="REBATE" Type="int" />
+          <Property Name="ATT_YN" Type="nvarchar" MaxLength="50" />
+          <Property Name="PFNDYN" Type="nvarchar" MaxLength="50" />
+          <Property Name="FCTYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="INCHARGE" Type="nvarchar" MaxLength="500" />
+          <Property Name="PNCREG" Type="nvarchar" MaxLength="500" />
+          <Property Name="PNCEXP" Type="date" />
+          <Property Name="XADATE" Type="date" />
+          <Property Name="XCDATE" Type="date" />
+          <Property Name="XRDATE" Type="date" />
+          <Property Name="PBTIME" Type="time" Precision="7" />
+          <Property Name="PBINCR" Type="int" />
+          <Property Name="JOINSAL" Type="int" />
+          <Property Name="RSGDAYS" Type="int" />
+          <Property Name="CVCODE" Type="int" />
+          <Property Name="EMPARE" Type="nvarchar" MaxLength="500" />
+          <Property Name="PKHORS" Type="int" />
+          <Property Name="SECURTY" Type="nvarchar" MaxLength="500" />
+          <Property Name="E_DI" Type="nvarchar" MaxLength="1000" />
+          <Property Name="C_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="D_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="RWAL_FOUN" Type="nvarchar" MaxLength="1000" />
+          <Property Name="S_CARD" Type="int" />
+          <Property Name="DOC" Type="int" />
+          <Property Name="APPL" Type="int" />
+          <Property Name="BIOT" Type="int" />
+          <Property Name="BANK" Type="int" />
+          <Property Name="FEE" Type="int" />
+          <Property Name="RSG_CODE" Type="int" />
+          <Property Name="DOCYN" Type="int" />
+          <Property Name="MED_ALLIED" Type="nvarchar" MaxLength="3000" />
+          <Property Name="PRIVATE_PRACTICES" Type="int" />
+          <Property Name="SIGN" Type="nvarchar" MaxLength="1000" />
+          <Property Name="HOSTELYN" Type="nvarchar" MaxLength="500" />
+          <Property Name="HOSTEL_CHARGES" Type="int" />
+          <Property Name="DAY_CAREYN" Type="nvarchar" MaxLength="500" />
+          <Property Name="DAYCARE_CHARGES" Type="int" />
+          <Property Name="DRIVE_LINCES" Type="nvarchar" MaxLength="500" />
+          <Property Name="ENT_SYSDATE" Type="date" />
+          <Property Name="EOBI_MON" Type="nvarchar" MaxLength="500" />
+          <Property Name="EOBI_YEAR" Type="nvarchar" MaxLength="50" />
+          <Property Name="EOBI_R_DATE" Type="date" />
+          <Property Name="DRYN" Type="int" />
+          <Property Name="SOCIAL_AMT" Type="int" />
+          <Property Name="EMP_TYPE" Type="int" />
+          <Property Name="EOBI_STATUS" Type="int" />
+        </EntityType>
+        <EntityType Name="TBL_PROCEDURE_CAT">
+          <Key>
+            <PropertyRef Name="pc_id" />
+          </Key>
+          <Property Name="pc_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pc_name" Type="varchar" MaxLength="500" />
+          <Property Name="status" Type="int" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="user_org" Type="int" />
+          <Property Name="user_Date" Type="datetime" />
+          <Property Name="dept" Type="int" />
+          <Property Name="org_id" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'techohas.dbo.TBL_PROCEDURE_ENTRY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TBL_PROCEDURE_ENTRY">
+          <Property Name="PRO_ID" Type="int" />
+          <Property Name="PRO_NAME" Type="varchar" MaxLength="500" />
+          <Property Name="PRO_CAT" Type="int" />
+          <Property Name="PRO_DISCOUNT" Type="int" />
+          <Property Name="PRO_AMOUNT" Type="int" />
+          <Property Name="PRO_PRICE" Type="int" />
+          <Property Name="PRO_EXPENCE" Type="int" />
+          <Property Name="PRO_TYPE" Type="int" />
+          <Property Name="PRO_HEAD" Type="int" />
+          <Property Name="PRO_ORG" Type="int" />
+          <Property Name="PRO_USER_ID" Type="int" />
+          <Property Name="PRO_USER_dATE" Type="datetime" />
+          <Property Name="PRO_REFRANGE" Type="varchar" MaxLength="500" />
+          <Property Name="PRO_MEASUREMENT_UNIT" Type="varchar" MaxLength="500" />
+          <Property Name="PRO_SAMPLE_REQ" Type="varchar" MaxLength="500" />
+          <Property Name="PRO_SPECIMEN" Type="varchar" MaxLength="500" />
+          <Property Name="PRO_PANEL_TYPE" Type="int" />
+          <Property Name="PRO_CODE" Type="int" />
+          <Property Name="PRO_SHIFT" Type="int" />
+          <Property Name="PRO_DEPT" Type="int" />
+          <Property Name="PRO_CONS" Type="int" />
+          <Property Name="PRO_STATE" Type="int" />
+          <Property Name="pro_s" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <EntityType Name="TBL_R_CAT">
+          <Key>
+            <PropertyRef Name="CAT_ID" />
+          </Key>
+          <Property Name="CAT_ID" Type="int" Nullable="false" />
+          <Property Name="CAT_NAME" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TBL_R_DEPT">
+          <Key>
+            <PropertyRef Name="DEPT_ID" />
+          </Key>
+          <Property Name="DEPT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DEPT_NAME" Type="nvarchar" MaxLength="1000" />
+          <Property Name="PRY" Type="int" />
+        </EntityType>
+        <EntityType Name="TBL_R_PANEL">
+          <Key>
+            <PropertyRef Name="panel_id" />
+          </Key>
+          <Property Name="panel_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="panel_name" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TBL_R_PATIENT">
+          <Key>
+            <PropertyRef Name="MR_NO" />
+          </Key>
+          <Property Name="FAMILY_NO" Type="int" />
+          <Property Name="TDATE" Type="date" />
+          <Property Name="MR_NO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AGE" Type="int" />
+          <Property Name="FIRST_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="ADDRESS1" Type="nvarchar" MaxLength="1000" />
+          <Property Name="STREET_ADDRESS2" Type="nvarchar" MaxLength="1000" />
+          <Property Name="CITY" Type="nvarchar" MaxLength="500" />
+          <Property Name="STATE" Type="nvarchar" MaxLength="500" />
+          <Property Name="POSTAL_CODE" Type="int" />
+          <Property Name="PHONE_NUMBER1" Type="int" />
+          <Property Name="PHONE_NUMBER2" Type="int" />
+          <Property Name="CREDIT_LIMIT" Type="int" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="500" />
+          <Property Name="GENDER" Type="nvarchar" MaxLength="50" />
+          <Property Name="USERID" Type="int" />
+          <Property Name="ADMINTOTAL" Type="int" />
+          <Property Name="DEPT_ID" Type="int" />
+          <Property Name="F_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="PANEL_G" Type="int" />
+          <Property Name="ADDMISSIONID" Type="int" />
+          <Property Name="PMNHP_NO" Type="int" />
+          <Property Name="PROCEDUREGROUP" Type="nvarchar" MaxLength="50" />
+          <Property Name="PATIENTTYPE" Type="int" />
+          <Property Name="PROTOTAL" Type="int" />
+          <Property Name="STATUS" Type="int" />
+          <Property Name="NIC" Type="int" />
+          <Property Name="DATEOFBIRTH" Type="date" />
+          <Property Name="SSN" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMG_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMG_CONTACT" Type="int" />
+          <Property Name="EMG_RELATION" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMG_HOME" Type="int" />
+          <Property Name="EMP_CODE" Type="int" />
+          <Property Name="EMP_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMP_DESG" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMP_CONTACT" Type="int" />
+          <Property Name="EMP_DEPART" Type="int" />
+          <Property Name="EMP_ADDRESS" Type="nvarchar" MaxLength="1000" />
+          <Property Name="POLICY_ID" Type="int" />
+          <Property Name="EFFECT_DATE" Type="date" />
+          <Property Name="P_GROUP" Type="nvarchar" MaxLength="500" />
+          <Property Name="P_HOLDER_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="P_DOB" Type="date" />
+          <Property Name="P_RELATION" Type="nvarchar" MaxLength="500" />
+          <Property Name="P_INSSURANCE" Type="nvarchar" MaxLength="500" />
+          <Property Name="TEL_NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="CNIC_NO" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TBL_R_RECEIPT">
+          <Key>
+            <PropertyRef Name="R_ID" />
+          </Key>
+          <Property Name="R_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RCPT_DATE" Type="date" />
+          <Property Name="HPTL_ID" Type="int" />
+          <Property Name="DEPT_ID" Type="int" />
+          <Property Name="MR_NO" Type="int" />
+          <Property Name="TEEATMNT_ID" Type="int" />
+          <Property Name="CONSULTANT_ID" Type="int" />
+          <Property Name="PAYMENT_ID" Type="int" />
+          <Property Name="PAYMENT_AMOUNT" Type="int" />
+          <Property Name="R_LOGIC_ID" Type="int" />
+          <Property Name="R_LOGIC_DATE" Type="date" />
+          <Property Name="HPTL" Type="int" />
+          <Property Name="P_TYPE" Type="int" />
+          <Property Name="USER_PR" Type="int" />
+          <Property Name="MAG_PR" Type="int" />
+          <Property Name="PANEL" Type="int" />
+          <Property Name="PANEL_FEE" Type="int" />
+          <Property Name="CONST_TYPE" Type="int" />
+          <Property Name="PAID_YN" Type="int" />
+          <Property Name="SHARE_AMOUNT" Type="int" />
+          <Property Name="TOKEN" Type="int" />
+          <Property Name="PAY_DATE" Type="date" />
+          <Property Name="APP_YN" Type="int" />
+          <Property Name="APP_DATE" Type="date" />
+          <Property Name="APP_FEE" Type="int" />
+          <Property Name="APP_TOKEN" Type="int" />
+          <Property Name="APP_TIME" Type="date" />
+          <Property Name="rec_datetime" Type="datetime" />
+          <Property Name="user_date" Type="datetime" />
+          <Property Name="org_id" Type="int" />
+        </EntityType>
+        <EntityType Name="TBL_R_TEST">
+          <Key>
+            <PropertyRef Name="TEST_ID" />
+          </Key>
+          <Property Name="TEST_ID" Type="int" Nullable="false" />
+          <Property Name="TEST_DATE" Type="date" />
+          <Property Name="MR_NO" Type="int" />
+          <Property Name="DISC_ID" Type="int" />
+          <Property Name="DISC_AMOUNT" Type="int" />
+          <Property Name="GRANT_TOTAL" Type="int" />
+          <Property Name="USER_ID" Type="int" />
+          <Property Name="USER_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="USER_DATE" Type="date" />
+          <Property Name="REFUND_AMOUNT" Type="int" />
+          <Property Name="REF_DATE" Type="date" />
+          <Property Name="CONST_ID" Type="int" />
+          <Property Name="USER_PR" Type="int" />
+          <Property Name="MAG_PR" Type="int" />
+          <Property Name="PANEL" Type="int" />
+          <Property Name="DC_REFUND" Type="int" />
+          <Property Name="COMFRM" Type="int" />
+          <Property Name="SHIFT_ID" Type="int" />
+          <Property Name="IPD_AMOUNT" Type="int" />
+          <Property Name="IPD_NO" Type="int" />
+          <Property Name="SAMLEYN" Type="int" />
+          <Property Name="LAB_NO" Type="int" />
+          <Property Name="GRANT_TOTALP" Type="int" />
+        </EntityType>
+        <EntityType Name="TBL_USER_D">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="int" Nullable="false" />
+          <Property Name="USER_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="USER_PASSWORD" Type="nvarchar" MaxLength="500" />
+          <Property Name="DEP_CODE" Type="int" />
+          <Property Name="CMP_CODE" Type="int" />
+          <Property Name="USERS" Type="nvarchar" MaxLength="500" />
+          <Property Name="MAG_ACT" Type="int" />
+          <Property Name="R_ACTIVE" Type="int" />
+          <Property Name="ORG" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'techohas.dbo.Procedure_slip' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Procedure_slip">
+          <Key>
+            <PropertyRef Name="mpd_id" />
+            <PropertyRef Name="mp_code" />
+            <PropertyRef Name="mr_no" />
+          </Key>
+          <Property Name="mpd_id" Type="int" Nullable="false" />
+          <Property Name="mp_code" Type="int" Nullable="false" />
+          <Property Name="mr" Type="int" />
+          <Property Name="price" Type="int" />
+          <Property Name="mp_user_id" Type="int" />
+          <Property Name="mr_no" Type="int" Nullable="false" />
+          <Property Name="First_name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Tel_no" Type="nvarchar" MaxLength="50" />
+          <Property Name="PRO_NAME" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'techohas.dbo.VIEW_LAB' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VIEW_LAB">
+          <Key>
+            <PropertyRef Name="TEST_ID" />
+            <PropertyRef Name="MR_NO" />
+            <PropertyRef Name="PRO_ID" />
+          </Key>
+          <Property Name="TEST_ID" Type="int" Nullable="false" />
+          <Property Name="MR_NO" Type="int" Nullable="false" />
+          <Property Name="AGE" Type="int" />
+          <Property Name="FIRST_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="ADDRESS1" Type="nvarchar" MaxLength="1000" />
+          <Property Name="GENDER" Type="nvarchar" MaxLength="50" />
+          <Property Name="TEL_NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="MP_GRANT_TOTAL" Type="int" />
+          <Property Name="MP_USER_DATE" Type="datetime" />
+          <Property Name="MP_USER_ID" Type="int" />
+          <Property Name="MP_CONS" Type="int" />
+          <Property Name="MPD_USER_ID" Type="varchar" MaxLength="500" />
+          <Property Name="MPD_SAMPLE_ID" Type="int" />
+          <Property Name="MPD_SAMPLE_YN" Type="int" />
+          <Property Name="PRO_NAME" Type="varchar" MaxLength="500" />
+          <Property Name="PRO_CAT" Type="int" />
+          <Property Name="PRO_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'techohas.dbo.View_Visit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Visit">
+          <Key>
+            <PropertyRef Name="CON_JOB_ID" />
+            <PropertyRef Name="R_ID" />
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="Expr4" />
+          </Key>
+          <Property Name="CON_JOB_ID" Type="int" Nullable="false" />
+          <Property Name="CON_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="CON_FEE" Type="int" />
+          <Property Name="CD" Type="int" />
+          <Property Name="CTFEE" Type="int" />
+          <Property Name="DEGREE" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ER_FEE" Type="int" />
+          <Property Name="SP_VISIT" Type="int" />
+          <Property Name="STATUS" Type="int" />
+          <Property Name="FELLOW_UP" Type="int" />
+          <Property Name="DESG" Type="nvarchar" MaxLength="1000" />
+          <Property Name="DOC_SHARE" Type="int" />
+          <Property Name="DEP_ID" Type="int" />
+          <Property Name="R_ID" Type="int" Nullable="false" />
+          <Property Name="RCPT_DATE" Type="date" />
+          <Property Name="HPTL_ID" Type="int" />
+          <Property Name="DEPT_ID" Type="int" />
+          <Property Name="MR_NO" Type="int" />
+          <Property Name="TEEATMNT_ID" Type="int" />
+          <Property Name="CONSULTANT_ID" Type="int" />
+          <Property Name="PAYMENT_ID" Type="int" />
+          <Property Name="PAYMENT_AMOUNT" Type="int" />
+          <Property Name="R_LOGIC_ID" Type="int" />
+          <Property Name="R_LOGIC_DATE" Type="date" />
+          <Property Name="HPTL" Type="int" />
+          <Property Name="P_TYPE" Type="int" />
+          <Property Name="USER_PR" Type="int" />
+          <Property Name="MAG_PR" Type="int" />
+          <Property Name="PANEL" Type="int" />
+          <Property Name="PANEL_FEE" Type="int" />
+          <Property Name="CONST_TYPE" Type="int" />
+          <Property Name="PAID_YN" Type="int" />
+          <Property Name="SHARE_AMOUNT" Type="int" />
+          <Property Name="TOKEN" Type="int" />
+          <Property Name="PAY_DATE" Type="date" />
+          <Property Name="APP_YN" Type="int" />
+          <Property Name="APP_DATE" Type="date" />
+          <Property Name="APP_FEE" Type="int" />
+          <Property Name="APP_TOKEN" Type="int" />
+          <Property Name="APP_TIME" Type="date" />
+          <Property Name="FAMILY_NO" Type="int" />
+          <Property Name="TDATE" Type="date" />
+          <Property Name="Expr1" Type="int" Nullable="false" />
+          <Property Name="AGE" Type="int" />
+          <Property Name="FIRST_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="ADDRESS1" Type="nvarchar" MaxLength="1000" />
+          <Property Name="STREET_ADDRESS2" Type="nvarchar" MaxLength="1000" />
+          <Property Name="CITY" Type="nvarchar" MaxLength="500" />
+          <Property Name="STATE" Type="nvarchar" MaxLength="500" />
+          <Property Name="POSTAL_CODE" Type="int" />
+          <Property Name="PHONE_NUMBER1" Type="int" />
+          <Property Name="PHONE_NUMBER2" Type="int" />
+          <Property Name="CREDIT_LIMIT" Type="int" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="500" />
+          <Property Name="GENDER" Type="nvarchar" MaxLength="50" />
+          <Property Name="USERID" Type="int" />
+          <Property Name="ADMINTOTAL" Type="int" />
+          <Property Name="Expr2" Type="int" />
+          <Property Name="F_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="PANEL_G" Type="int" />
+          <Property Name="ADDMISSIONID" Type="int" />
+          <Property Name="PMNHP_NO" Type="int" />
+          <Property Name="PROCEDUREGROUP" Type="nvarchar" MaxLength="50" />
+          <Property Name="PATIENTTYPE" Type="int" />
+          <Property Name="PROTOTAL" Type="int" />
+          <Property Name="Expr3" Type="int" />
+          <Property Name="NIC" Type="int" />
+          <Property Name="DATEOFBIRTH" Type="date" />
+          <Property Name="SSN" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMG_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMG_CONTACT" Type="int" />
+          <Property Name="EMG_RELATION" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMG_HOME" Type="int" />
+          <Property Name="EMP_CODE" Type="int" />
+          <Property Name="EMP_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMP_DESG" Type="nvarchar" MaxLength="500" />
+          <Property Name="EMP_CONTACT" Type="int" />
+          <Property Name="EMP_DEPART" Type="int" />
+          <Property Name="EMP_ADDRESS" Type="nvarchar" MaxLength="1000" />
+          <Property Name="POLICY_ID" Type="int" />
+          <Property Name="EFFECT_DATE" Type="date" />
+          <Property Name="P_GROUP" Type="nvarchar" MaxLength="500" />
+          <Property Name="P_HOLDER_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="P_DOB" Type="date" />
+          <Property Name="P_RELATION" Type="nvarchar" MaxLength="500" />
+          <Property Name="P_INSSURANCE" Type="nvarchar" MaxLength="500" />
+          <Property Name="Expr4" Type="int" Nullable="false" />
+          <Property Name="DEPT_NAME" Type="nvarchar" MaxLength="1000" />
+          <Property Name="PRY" Type="int" />
+          <Property Name="TEL_NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="CNIC_NO" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_TBl_CONS_FEE_TBL_CONSULTANT">
+          <End Role="TBL_CONSULTANT" Type="Self.TBL_CONSULTANT" Multiplicity="0..1" />
+          <End Role="TBl_CONS_FEE" Type="Self.TBl_CONS_FEE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CONSULTANT">
+              <PropertyRef Name="CON_JOB_ID" />
+            </Principal>
+            <Dependent Role="TBl_CONS_FEE">
+              <PropertyRef Name="fee_cons" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_CONSULTANT_TBL_R_DEPT">
+          <End Role="TBL_R_DEPT" Type="Self.TBL_R_DEPT" Multiplicity="0..1" />
+          <End Role="TBL_CONSULTANT" Type="Self.TBL_CONSULTANT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_R_DEPT">
+              <PropertyRef Name="DEPT_ID" />
+            </Principal>
+            <Dependent Role="TBL_CONSULTANT">
+              <PropertyRef Name="DEP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_MASTER_PRO_ENTRY_TBL_PROCEDURE_CAT">
+          <End Role="TBL_PROCEDURE_CAT" Type="Self.TBL_PROCEDURE_CAT" Multiplicity="0..1" />
+          <End Role="TBL_MASTER_PRO_ENTRY" Type="Self.TBL_MASTER_PRO_ENTRY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_PROCEDURE_CAT">
+              <PropertyRef Name="pc_id" />
+            </Principal>
+            <Dependent Role="TBL_MASTER_PRO_ENTRY">
+              <PropertyRef Name="PRO_CAT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_MASTER_PROCEDURE_TBL_R_PATIENT">
+          <End Role="TBL_R_PATIENT" Type="Self.TBL_R_PATIENT" Multiplicity="0..1" />
+          <End Role="TBL_MASTER_PROCEDURE" Type="Self.TBL_MASTER_PROCEDURE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_R_PATIENT">
+              <PropertyRef Name="MR_NO" />
+            </Principal>
+            <Dependent Role="TBL_MASTER_PROCEDURE">
+              <PropertyRef Name="MR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_MPROC_DETAIL_TBL_MASTER_PRO_ENTRY">
+          <End Role="TBL_MASTER_PRO_ENTRY" Type="Self.TBL_MASTER_PRO_ENTRY" Multiplicity="0..1" />
+          <End Role="TBL_MPROC_DETAIL" Type="Self.TBL_MPROC_DETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_MASTER_PRO_ENTRY">
+              <PropertyRef Name="PRO_ID" />
+            </Principal>
+            <Dependent Role="TBL_MPROC_DETAIL">
+              <PropertyRef Name="pro_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_MPROC_DETAIL_TBL_MASTER_PROCEDURE">
+          <End Role="TBL_MASTER_PROCEDURE" Type="Self.TBL_MASTER_PROCEDURE" Multiplicity="0..1" />
+          <End Role="TBL_MPROC_DETAIL" Type="Self.TBL_MPROC_DETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_MASTER_PROCEDURE">
+              <PropertyRef Name="MP_CODE" />
+            </Principal>
+            <Dependent Role="TBL_MPROC_DETAIL">
+              <PropertyRef Name="MP_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PROCEDURE_CAT_TBL_R_DEPT">
+          <End Role="TBL_R_DEPT" Type="Self.TBL_R_DEPT" Multiplicity="0..1" />
+          <End Role="TBL_PROCEDURE_CAT" Type="Self.TBL_PROCEDURE_CAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_R_DEPT">
+              <PropertyRef Name="DEPT_ID" />
+            </Principal>
+            <Dependent Role="TBL_PROCEDURE_CAT">
+              <PropertyRef Name="dept" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_R_RECEIPT_TBL_CONSULTANT">
+          <End Role="TBL_CONSULTANT" Type="Self.TBL_CONSULTANT" Multiplicity="0..1" />
+          <End Role="TBL_R_RECEIPT" Type="Self.TBL_R_RECEIPT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CONSULTANT">
+              <PropertyRef Name="CON_JOB_ID" />
+            </Principal>
+            <Dependent Role="TBL_R_RECEIPT">
+              <PropertyRef Name="CONSULTANT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_R_RECEIPT_TBL_R_DEPT">
+          <End Role="TBL_R_DEPT" Type="Self.TBL_R_DEPT" Multiplicity="0..1" />
+          <End Role="TBL_R_RECEIPT" Type="Self.TBL_R_RECEIPT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_R_DEPT">
+              <PropertyRef Name="DEPT_ID" />
+            </Principal>
+            <Dependent Role="TBL_R_RECEIPT">
+              <PropertyRef Name="DEPT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_R_RECEIPT_TBL_R_PATIENT">
+          <End Role="TBL_R_PATIENT" Type="Self.TBL_R_PATIENT" Multiplicity="0..1" />
+          <End Role="TBL_R_RECEIPT" Type="Self.TBL_R_RECEIPT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_R_PATIENT">
+              <PropertyRef Name="MR_NO" />
+            </Principal>
+            <Dependent Role="TBL_R_RECEIPT">
+              <PropertyRef Name="MR_NO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_R_TEST_TBL_USER_D">
+          <End Role="TBL_USER_D" Type="Self.TBL_USER_D" Multiplicity="0..1" />
+          <End Role="TBL_R_TEST" Type="Self.TBL_R_TEST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER_D">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="TBL_R_TEST">
+              <PropertyRef Name="USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_USER_D_TBL_ORGINATION">
+          <End Role="TBL_ORGINATION" Type="Self.TBL_ORGINATION" Multiplicity="0..1" />
+          <End Role="TBL_USER_D" Type="Self.TBL_USER_D" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_ORGINATION">
+              <PropertyRef Name="ORG_ID" />
+            </Principal>
+            <Dependent Role="TBL_USER_D">
+              <PropertyRef Name="ORG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="procedureReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="Pathology_dbModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBl_CONS_FEE" EntityType="Self.TBl_CONS_FEE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_CONSULTANT" EntityType="Self.TBL_CONSULTANT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_Gender" EntityType="Self.TBL_Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_MASTER_PRO_ENTRY" EntityType="Self.TBL_MASTER_PRO_ENTRY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_MASTER_PROCEDURE" EntityType="Self.TBL_MASTER_PROCEDURE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_MPROC_DETAIL" EntityType="Self.TBL_MPROC_DETAIL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_ORGINATION" EntityType="Self.TBL_ORGINATION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_PAY_MAST" EntityType="Self.TBL_PAY_MAST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_PROCEDURE_CAT" EntityType="Self.TBL_PROCEDURE_CAT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_R_CAT" EntityType="Self.TBL_R_CAT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_R_DEPT" EntityType="Self.TBL_R_DEPT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_R_PANEL" EntityType="Self.TBL_R_PANEL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_R_PATIENT" EntityType="Self.TBL_R_PATIENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_R_RECEIPT" EntityType="Self.TBL_R_RECEIPT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_R_TEST" EntityType="Self.TBL_R_TEST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_USER_D" EntityType="Self.TBL_USER_D" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Procedure_slip" EntityType="Self.Procedure_slip" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Procedure_slip].[mpd_id] AS [mpd_id], 
+    [Procedure_slip].[mp_code] AS [mp_code], 
+    [Procedure_slip].[mr] AS [mr], 
+    [Procedure_slip].[price] AS [price], 
+    [Procedure_slip].[mp_user_id] AS [mp_user_id], 
+    [Procedure_slip].[mr_no] AS [mr_no], 
+    [Procedure_slip].[First_name] AS [First_name], 
+    [Procedure_slip].[Age] AS [Age], 
+    [Procedure_slip].[Tel_no] AS [Tel_no], 
+    [Procedure_slip].[PRO_NAME] AS [PRO_NAME]
+    FROM [dbo].[Procedure_slip] AS [Procedure_slip]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VIEW_LAB" EntityType="Self.VIEW_LAB" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VIEW_LAB].[TEST_ID] AS [TEST_ID], 
+    [VIEW_LAB].[MR_NO] AS [MR_NO], 
+    [VIEW_LAB].[AGE] AS [AGE], 
+    [VIEW_LAB].[FIRST_NAME] AS [FIRST_NAME], 
+    [VIEW_LAB].[ADDRESS1] AS [ADDRESS1], 
+    [VIEW_LAB].[GENDER] AS [GENDER], 
+    [VIEW_LAB].[TEL_NO] AS [TEL_NO], 
+    [VIEW_LAB].[MP_GRANT_TOTAL] AS [MP_GRANT_TOTAL], 
+    [VIEW_LAB].[MP_USER_DATE] AS [MP_USER_DATE], 
+    [VIEW_LAB].[MP_USER_ID] AS [MP_USER_ID], 
+    [VIEW_LAB].[MP_CONS] AS [MP_CONS], 
+    [VIEW_LAB].[MPD_USER_ID] AS [MPD_USER_ID], 
+    [VIEW_LAB].[MPD_SAMPLE_ID] AS [MPD_SAMPLE_ID], 
+    [VIEW_LAB].[MPD_SAMPLE_YN] AS [MPD_SAMPLE_YN], 
+    [VIEW_LAB].[PRO_NAME] AS [PRO_NAME], 
+    [VIEW_LAB].[PRO_CAT] AS [PRO_CAT], 
+    [VIEW_LAB].[PRO_ID] AS [PRO_ID]
+    FROM [dbo].[VIEW_LAB] AS [VIEW_LAB]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Visit" EntityType="Self.View_Visit" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Visit].[CON_JOB_ID] AS [CON_JOB_ID], 
+    [View_Visit].[CON_NAME] AS [CON_NAME], 
+    [View_Visit].[CON_FEE] AS [CON_FEE], 
+    [View_Visit].[CD] AS [CD], 
+    [View_Visit].[CTFEE] AS [CTFEE], 
+    [View_Visit].[DEGREE] AS [DEGREE], 
+    [View_Visit].[ER_FEE] AS [ER_FEE], 
+    [View_Visit].[SP_VISIT] AS [SP_VISIT], 
+    [View_Visit].[STATUS] AS [STATUS], 
+    [View_Visit].[FELLOW_UP] AS [FELLOW_UP], 
+    [View_Visit].[DESG] AS [DESG], 
+    [View_Visit].[DOC_SHARE] AS [DOC_SHARE], 
+    [View_Visit].[DEP_ID] AS [DEP_ID], 
+    [View_Visit].[R_ID] AS [R_ID], 
+    [View_Visit].[RCPT_DATE] AS [RCPT_DATE], 
+    [View_Visit].[HPTL_ID] AS [HPTL_ID], 
+    [View_Visit].[DEPT_ID] AS [DEPT_ID], 
+    [View_Visit].[MR_NO] AS [MR_NO], 
+    [View_Visit].[TEEATMNT_ID] AS [TEEATMNT_ID], 
+    [View_Visit].[CONSULTANT_ID] AS [CONSULTANT_ID], 
+    [View_Visit].[PAYMENT_ID] AS [PAYMENT_ID], 
+    [View_Visit].[PAYMENT_AMOUNT] AS [PAYMENT_AMOUNT], 
+    [View_Visit].[R_LOGIC_ID] AS [R_LOGIC_ID], 
+    [View_Visit].[R_LOGIC_DATE] AS [R_LOGIC_DATE], 
+    [View_Visit].[HPTL] AS [HPTL], 
+    [View_Visit].[P_TYPE] AS [P_TYPE], 
+    [View_Visit].[USER_PR] AS [USER_PR], 
+    [View_Visit].[MAG_PR] AS [MAG_PR], 
+    [View_Visit].[PANEL] AS [PANEL], 
+    [View_Visit].[PANEL_FEE] AS [PANEL_FEE], 
+    [View_Visit].[CONST_TYPE] AS [CONST_TYPE], 
+    [View_Visit].[PAID_YN] AS [PAID_YN], 
+    [View_Visit].[SHARE_AMOUNT] AS [SHARE_AMOUNT], 
+    [View_Visit].[TOKEN] AS [TOKEN], 
+    [View_Visit].[PAY_DATE] AS [PAY_DATE], 
+    [View_Visit].[APP_YN] AS [APP_YN], 
+    [View_Visit].[APP_DATE] AS [APP_DATE], 
+    [View_Visit].[APP_FEE] AS [APP_FEE], 
+    [View_Visit].[APP_TOKEN] AS [APP_TOKEN], 
+    [View_Visit].[APP_TIME] AS [APP_TIME], 
+    [View_Visit].[FAMILY_NO] AS [FAMILY_NO], 
+    [View_Visit].[TDATE] AS [TDATE], 
+    [View_Visit].[Expr1] AS [Expr1], 
+    [View_Visit].[AGE] AS [AGE], 
+    [View_Visit].[FIRST_NAME] AS [FIRST_NAME], 
+    [View_Visit].[ADDRESS1] AS [ADDRESS1], 
+    [View_Visit].[STREET_ADDRESS2] AS [STREET_ADDRESS2], 
+    [View_Visit].[CITY] AS [CITY], 
+    [View_Visit].[STATE] AS [STATE], 
+    [View_Visit].[POSTAL_CODE] AS [POSTAL_CODE], 
+    [View_Visit].[PHONE_NUMBER1] AS [PHONE_NUMBER1], 
+    [View_Visit].[PHONE_NUMBER2] AS [PHONE_NUMBER2], 
+    [View_Visit].[CREDIT_LIMIT] AS [CREDIT_LIMIT], 
+    [View_Visit].[EMAIL] AS [EMAIL], 
+    [View_Visit].[GENDER] AS [GENDER], 
+    [View_Visit].[USERID] AS [USERID], 
+    [View_Visit].[ADMINTOTAL] AS [ADMINTOTAL], 
+    [View_Visit].[Expr2] AS [Expr2], 
+    [View_Visit].[F_NAME] AS [F_NAME], 
+    [View_Visit].[PANEL_G] AS [PANEL_G], 
+    [View_Visit].[ADDMISSIONID] AS [ADDMISSIONID], 
+    [View_Visit].[PMNHP_NO] AS [PMNHP_NO], 
+    [View_Visit].[PROCEDUREGROUP] AS [PROCEDUREGROUP], 
+    [View_Visit].[PATIENTTYPE] AS [PATIENTTYPE], 
+    [View_Visit].[PROTOTAL] AS [PROTOTAL], 
+    [View_Visit].[Expr3] AS [Expr3], 
+    [View_Visit].[NIC] AS [NIC], 
+    [View_Visit].[DATEOFBIRTH] AS [DATEOFBIRTH], 
+    [View_Visit].[SSN] AS [SSN], 
+    [View_Visit].[EMG_NAME] AS [EMG_NAME], 
+    [View_Visit].[EMG_CONTACT] AS [EMG_CONTACT], 
+    [View_Visit].[EMG_RELATION] AS [EMG_RELATION], 
+    [View_Visit].[EMG_HOME] AS [EMG_HOME], 
+    [View_Visit].[EMP_CODE] AS [EMP_CODE], 
+    [View_Visit].[EMP_NAME] AS [EMP_NAME], 
+    [View_Visit].[EMP_DESG] AS [EMP_DESG], 
+    [View_Visit].[EMP_CONTACT] AS [EMP_CONTACT], 
+    [View_Visit].[EMP_DEPART] AS [EMP_DEPART], 
+    [View_Visit].[EMP_ADDRESS] AS [EMP_ADDRESS], 
+    [View_Visit].[POLICY_ID] AS [POLICY_ID], 
+    [View_Visit].[EFFECT_DATE] AS [EFFECT_DATE], 
+    [View_Visit].[P_GROUP] AS [P_GROUP], 
+    [View_Visit].[P_HOLDER_NAME] AS [P_HOLDER_NAME], 
+    [View_Visit].[P_DOB] AS [P_DOB], 
+    [View_Visit].[P_RELATION] AS [P_RELATION], 
+    [View_Visit].[P_INSSURANCE] AS [P_INSSURANCE], 
+    [View_Visit].[Expr4] AS [Expr4], 
+    [View_Visit].[DEPT_NAME] AS [DEPT_NAME], 
+    [View_Visit].[PRY] AS [PRY], 
+    [View_Visit].[TEL_NO] AS [TEL_NO], 
+    [View_Visit].[CNIC_NO] AS [CNIC_NO]
+    FROM [dbo].[View_Visit] AS [View_Visit]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_TBl_CONS_FEE_TBL_CONSULTANT" Association="Self.FK_TBl_CONS_FEE_TBL_CONSULTANT">
+            <End Role="TBL_CONSULTANT" EntitySet="TBL_CONSULTANT" />
+            <End Role="TBl_CONS_FEE" EntitySet="TBl_CONS_FEE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_CONSULTANT_TBL_R_DEPT" Association="Self.FK_TBL_CONSULTANT_TBL_R_DEPT">
+            <End Role="TBL_R_DEPT" EntitySet="TBL_R_DEPT" />
+            <End Role="TBL_CONSULTANT" EntitySet="TBL_CONSULTANT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_MASTER_PRO_ENTRY_TBL_PROCEDURE_CAT" Association="Self.FK_TBL_MASTER_PRO_ENTRY_TBL_PROCEDURE_CAT">
+            <End Role="TBL_PROCEDURE_CAT" EntitySet="TBL_PROCEDURE_CAT" />
+            <End Role="TBL_MASTER_PRO_ENTRY" EntitySet="TBL_MASTER_PRO_ENTRY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_MASTER_PROCEDURE_TBL_R_PATIENT" Association="Self.FK_TBL_MASTER_PROCEDURE_TBL_R_PATIENT">
+            <End Role="TBL_R_PATIENT" EntitySet="TBL_R_PATIENT" />
+            <End Role="TBL_MASTER_PROCEDURE" EntitySet="TBL_MASTER_PROCEDURE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_MPROC_DETAIL_TBL_MASTER_PRO_ENTRY" Association="Self.FK_TBL_MPROC_DETAIL_TBL_MASTER_PRO_ENTRY">
+            <End Role="TBL_MASTER_PRO_ENTRY" EntitySet="TBL_MASTER_PRO_ENTRY" />
+            <End Role="TBL_MPROC_DETAIL" EntitySet="TBL_MPROC_DETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_MPROC_DETAIL_TBL_MASTER_PROCEDURE" Association="Self.FK_TBL_MPROC_DETAIL_TBL_MASTER_PROCEDURE">
+            <End Role="TBL_MASTER_PROCEDURE" EntitySet="TBL_MASTER_PROCEDURE" />
+            <End Role="TBL_MPROC_DETAIL" EntitySet="TBL_MPROC_DETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PROCEDURE_CAT_TBL_R_DEPT" Association="Self.FK_TBL_PROCEDURE_CAT_TBL_R_DEPT">
+            <End Role="TBL_R_DEPT" EntitySet="TBL_R_DEPT" />
+            <End Role="TBL_PROCEDURE_CAT" EntitySet="TBL_PROCEDURE_CAT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_R_RECEIPT_TBL_CONSULTANT" Association="Self.FK_TBL_R_RECEIPT_TBL_CONSULTANT">
+            <End Role="TBL_CONSULTANT" EntitySet="TBL_CONSULTANT" />
+            <End Role="TBL_R_RECEIPT" EntitySet="TBL_R_RECEIPT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_R_RECEIPT_TBL_R_DEPT" Association="Self.FK_TBL_R_RECEIPT_TBL_R_DEPT">
+            <End Role="TBL_R_DEPT" EntitySet="TBL_R_DEPT" />
+            <End Role="TBL_R_RECEIPT" EntitySet="TBL_R_RECEIPT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_R_RECEIPT_TBL_R_PATIENT" Association="Self.FK_TBL_R_RECEIPT_TBL_R_PATIENT">
+            <End Role="TBL_R_PATIENT" EntitySet="TBL_R_PATIENT" />
+            <End Role="TBL_R_RECEIPT" EntitySet="TBL_R_RECEIPT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_R_TEST_TBL_USER_D" Association="Self.FK_TBL_R_TEST_TBL_USER_D">
+            <End Role="TBL_USER_D" EntitySet="TBL_USER_D" />
+            <End Role="TBL_R_TEST" EntitySet="TBL_R_TEST" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_USER_D_TBL_ORGINATION" Association="Self.FK_TBL_USER_D_TBL_ORGINATION">
+            <End Role="TBL_ORGINATION" EntitySet="TBL_ORGINATION" />
+            <End Role="TBL_USER_D" EntitySet="TBL_USER_D" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Pathology_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TBL_CONSULTANT">
+          <Key>
+            <PropertyRef Name="CON_JOB_ID" />
+          </Key>
+          <Property Name="CON_JOB_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CON_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CON_FEE" Type="Int32" />
+          <Property Name="CD" Type="Int32" />
+          <Property Name="CTFEE" Type="Int32" />
+          <Property Name="DEGREE" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ER_FEE" Type="Int32" />
+          <Property Name="SP_VISIT" Type="Int32" />
+          <Property Name="STATUS" Type="Int32" />
+          <Property Name="FELLOW_UP" Type="Int32" />
+          <Property Name="DESG" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="DOC_SHARE" Type="Int32" />
+          <Property Name="DEP_ID" Type="Int32" />
+          <NavigationProperty Name="TBL_R_DEPT" Relationship="Self.FK_TBL_CONSULTANT_TBL_R_DEPT" FromRole="TBL_CONSULTANT" ToRole="TBL_R_DEPT" />
+          <NavigationProperty Name="TBL_R_RECEIPT" Relationship="Self.FK_TBL_R_RECEIPT_TBL_CONSULTANT" FromRole="TBL_CONSULTANT" ToRole="TBL_R_RECEIPT" />
+          <NavigationProperty Name="TBL_R_TEST" Relationship="Self.FK_TBL_R_TEST_TBL_CONSULTANT" FromRole="TBL_CONSULTANT" ToRole="TBL_R_TEST" />
+          <NavigationProperty Name="TBl_CONS_FEE" Relationship="Pathology_dbModel.FK_TBl_CONS_FEE_TBL_CONSULTANT" FromRole="TBL_CONSULTANT" ToRole="TBl_CONS_FEE" />
+        </EntityType>
+        <EntityType Name="TBL_R_CAT">
+          <Key>
+            <PropertyRef Name="CAT_ID" />
+          </Key>
+          <Property Name="CAT_ID" Type="Int32" Nullable="false" />
+          <Property Name="CAT_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBL_R_DEPT">
+          <Key>
+            <PropertyRef Name="DEPT_ID" />
+          </Key>
+          <Property Name="DEPT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DEPT_NAME" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="PRY" Type="Int32" />
+          <NavigationProperty Name="TBL_CONSULTANT" Relationship="Self.FK_TBL_CONSULTANT_TBL_R_DEPT" FromRole="TBL_R_DEPT" ToRole="TBL_CONSULTANT" />
+          <NavigationProperty Name="TBL_R_RECEIPT" Relationship="Self.FK_TBL_R_RECEIPT_TBL_R_DEPT" FromRole="TBL_R_DEPT" ToRole="TBL_R_RECEIPT" />
+          <NavigationProperty Name="TBL_PROCEDURE_CAT" Relationship="Pathology_dbModel.FK_TBL_PROCEDURE_CAT_TBL_R_DEPT" FromRole="TBL_R_DEPT" ToRole="TBL_PROCEDURE_CAT" />
+        </EntityType>
+        <EntityType Name="TBL_R_PATIENT">
+          <Key>
+            <PropertyRef Name="MR_NO" />
+          </Key>
+          <Property Name="FAMILY_NO" Type="Int32" />
+          <Property Name="TDATE" Type="DateTime" Precision="0" />
+          <Property Name="MR_NO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AGE" Type="Int32" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS1" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="STREET_ADDRESS2" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="CITY" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="STATE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="POSTAL_CODE" Type="Int32" />
+          <Property Name="PHONE_NUMBER1" Type="Int32" />
+          <Property Name="PHONE_NUMBER2" Type="Int32" />
+          <Property Name="CREDIT_LIMIT" Type="Int32" />
+          <Property Name="EMAIL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GENDER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USERID" Type="Int32" />
+          <Property Name="ADMINTOTAL" Type="Int32" />
+          <Property Name="DEPT_ID" Type="Int32" />
+          <Property Name="F_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PANEL_G" Type="Int32" />
+          <Property Name="ADDMISSIONID" Type="Int32" />
+          <Property Name="PMNHP_NO" Type="Int32" />
+          <Property Name="PROCEDUREGROUP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PATIENTTYPE" Type="Int32" />
+          <Property Name="PROTOTAL" Type="Int32" />
+          <Property Name="STATUS" Type="Int32" />
+          <Property Name="NIC" Type="Int32" />
+          <Property Name="DATEOFBIRTH" Type="DateTime" Precision="0" />
+          <Property Name="SSN" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMG_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMG_CONTACT" Type="Int32" />
+          <Property Name="EMG_RELATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMG_HOME" Type="Int32" />
+          <Property Name="EMP_CODE" Type="Int32" />
+          <Property Name="EMP_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_DESG" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_CONTACT" Type="Int32" />
+          <Property Name="EMP_DEPART" Type="Int32" />
+          <Property Name="EMP_ADDRESS" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="POLICY_ID" Type="Int32" />
+          <Property Name="EFFECT_DATE" Type="DateTime" Precision="0" />
+          <Property Name="P_GROUP" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="P_HOLDER_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="P_DOB" Type="DateTime" Precision="0" />
+          <Property Name="P_RELATION" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="P_INSSURANCE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TEL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CNIC_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TBL_R_RECEIPT" Relationship="Self.FK_TBL_R_RECEIPT_TBL_R_PATIENT" FromRole="TBL_R_PATIENT" ToRole="TBL_R_RECEIPT" />
+          <NavigationProperty Name="TBL_R_TEST" Relationship="Self.FK_TBL_R_TEST_TBL_R_PATIENT" FromRole="TBL_R_PATIENT" ToRole="TBL_R_TEST" />
+          <NavigationProperty Name="TBL_MASTER_PROCEDURE" Relationship="Pathology_dbModel.FK_TBL_MASTER_PROCEDURE_TBL_R_PATIENT" FromRole="TBL_R_PATIENT" ToRole="TBL_MASTER_PROCEDURE" />
+        </EntityType>
+        <EntityType Name="TBL_R_RECEIPT">
+          <Key>
+            <PropertyRef Name="R_ID" />
+          </Key>
+          <Property Name="R_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RCPT_DATE" Type="DateTime" Precision="0" />
+          <Property Name="HPTL_ID" Type="Int32" />
+          <Property Name="DEPT_ID" Type="Int32" />
+          <Property Name="MR_NO" Type="Int32" />
+          <Property Name="TEEATMNT_ID" Type="Int32" />
+          <Property Name="CONSULTANT_ID" Type="Int32" />
+          <Property Name="PAYMENT_ID" Type="Int32" />
+          <Property Name="PAYMENT_AMOUNT" Type="Int32" />
+          <Property Name="R_LOGIC_ID" Type="Int32" />
+          <Property Name="R_LOGIC_DATE" Type="DateTime" Precision="0" />
+          <Property Name="HPTL" Type="Int32" />
+          <Property Name="P_TYPE" Type="Int32" />
+          <Property Name="USER_PR" Type="Int32" />
+          <Property Name="MAG_PR" Type="Int32" />
+          <Property Name="PANEL" Type="Int32" />
+          <Property Name="PANEL_FEE" Type="Int32" />
+          <Property Name="CONST_TYPE" Type="Int32" />
+          <Property Name="PAID_YN" Type="Int32" />
+          <Property Name="SHARE_AMOUNT" Type="Int32" />
+          <Property Name="TOKEN" Type="Int32" />
+          <Property Name="PAY_DATE" Type="DateTime" Precision="0" />
+          <Property Name="APP_YN" Type="Int32" />
+          <Property Name="APP_DATE" Type="DateTime" Precision="0" />
+          <Property Name="APP_FEE" Type="Int32" />
+          <Property Name="APP_TOKEN" Type="Int32" />
+          <Property Name="APP_TIME" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_CONSULTANT" Relationship="Self.FK_TBL_R_RECEIPT_TBL_CONSULTANT" FromRole="TBL_R_RECEIPT" ToRole="TBL_CONSULTANT" />
+          <NavigationProperty Name="TBL_R_DEPT" Relationship="Self.FK_TBL_R_RECEIPT_TBL_R_DEPT" FromRole="TBL_R_RECEIPT" ToRole="TBL_R_DEPT" />
+          <NavigationProperty Name="TBL_R_PATIENT" Relationship="Self.FK_TBL_R_RECEIPT_TBL_R_PATIENT" FromRole="TBL_R_RECEIPT" ToRole="TBL_R_PATIENT" />
+          <Property Name="rec_datetime" Type="DateTime" Precision="3" />
+          <Property Name="user_date" Type="DateTime" Precision="3" />
+          <Property Name="org_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TBL_R_TEST">
+          <Key>
+            <PropertyRef Name="TEST_ID" />
+          </Key>
+          <Property Name="TEST_ID" Type="Int32" Nullable="false" />
+          <Property Name="TEST_DATE" Type="DateTime" Precision="0" />
+          <Property Name="MR_NO" Type="Int32" />
+          <Property Name="DISC_ID" Type="Int32" />
+          <Property Name="DISC_AMOUNT" Type="Int32" />
+          <Property Name="GRANT_TOTAL" Type="Int32" />
+          <Property Name="USER_ID" Type="Int32" />
+          <Property Name="USER_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="USER_DATE" Type="DateTime" Precision="0" />
+          <Property Name="REFUND_AMOUNT" Type="Int32" />
+          <Property Name="REF_DATE" Type="DateTime" Precision="0" />
+          <Property Name="CONST_ID" Type="Int32" />
+          <Property Name="USER_PR" Type="Int32" />
+          <Property Name="MAG_PR" Type="Int32" />
+          <Property Name="PANEL" Type="Int32" />
+          <Property Name="DC_REFUND" Type="Int32" />
+          <Property Name="COMFRM" Type="Int32" />
+          <Property Name="SHIFT_ID" Type="Int32" />
+          <Property Name="IPD_AMOUNT" Type="Int32" />
+          <Property Name="IPD_NO" Type="Int32" />
+          <Property Name="SAMLEYN" Type="Int32" />
+          <Property Name="LAB_NO" Type="Int32" />
+          <Property Name="GRANT_TOTALP" Type="Int32" />
+          <NavigationProperty Name="TBL_CONSULTANT" Relationship="Self.FK_TBL_R_TEST_TBL_CONSULTANT" FromRole="TBL_R_TEST" ToRole="TBL_CONSULTANT" />
+          <NavigationProperty Name="TBL_R_PATIENT" Relationship="Self.FK_TBL_R_TEST_TBL_R_PATIENT" FromRole="TBL_R_TEST" ToRole="TBL_R_PATIENT" />
+          <NavigationProperty Name="TBL_USER_D" Relationship="Self.FK_TBL_R_TEST_TBL_USER_D" FromRole="TBL_R_TEST" ToRole="TBL_USER_D" />
+        </EntityType>
+        <EntityType Name="TBL_USER_D">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="Int32" Nullable="false" />
+          <Property Name="USER_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="USER_PASSWORD" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DEP_CODE" Type="Int32" />
+          <Property Name="CMP_CODE" Type="Int32" />
+          <Property Name="USERS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MAG_ACT" Type="Int32" />
+          <Property Name="R_ACTIVE" Type="Int32" />
+          <NavigationProperty Name="TBL_R_TEST" Relationship="Self.FK_TBL_R_TEST_TBL_USER_D" FromRole="TBL_USER_D" ToRole="TBL_R_TEST" />
+          <Property Name="ORG" Type="Int32" />
+          <NavigationProperty Name="TBL_ORGINATION" Relationship="Pathology_dbModel.FK_TBL_USER_D_TBL_ORGINATION" FromRole="TBL_USER_D" ToRole="TBL_ORGINATION" />
+        </EntityType>
+        <EntityType Name="View_Visit">
+          <Key>
+            <PropertyRef Name="CON_JOB_ID" />
+            <PropertyRef Name="R_ID" />
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="Expr4" />
+          </Key>
+          <Property Name="CON_JOB_ID" Type="Int32" Nullable="false" />
+          <Property Name="CON_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CON_FEE" Type="Int32" />
+          <Property Name="CD" Type="Int32" />
+          <Property Name="CTFEE" Type="Int32" />
+          <Property Name="DEGREE" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ER_FEE" Type="Int32" />
+          <Property Name="SP_VISIT" Type="Int32" />
+          <Property Name="STATUS" Type="Int32" />
+          <Property Name="FELLOW_UP" Type="Int32" />
+          <Property Name="DESG" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="DOC_SHARE" Type="Int32" />
+          <Property Name="DEP_ID" Type="Int32" />
+          <Property Name="R_ID" Type="Int32" Nullable="false" />
+          <Property Name="RCPT_DATE" Type="DateTime" Precision="0" />
+          <Property Name="HPTL_ID" Type="Int32" />
+          <Property Name="DEPT_ID" Type="Int32" />
+          <Property Name="MR_NO" Type="Int32" />
+          <Property Name="TEEATMNT_ID" Type="Int32" />
+          <Property Name="CONSULTANT_ID" Type="Int32" />
+          <Property Name="PAYMENT_ID" Type="Int32" />
+          <Property Name="PAYMENT_AMOUNT" Type="Int32" />
+          <Property Name="R_LOGIC_ID" Type="Int32" />
+          <Property Name="R_LOGIC_DATE" Type="DateTime" Precision="0" />
+          <Property Name="HPTL" Type="Int32" />
+          <Property Name="P_TYPE" Type="Int32" />
+          <Property Name="USER_PR" Type="Int32" />
+          <Property Name="MAG_PR" Type="Int32" />
+          <Property Name="PANEL" Type="Int32" />
+          <Property Name="PANEL_FEE" Type="Int32" />
+          <Property Name="CONST_TYPE" Type="Int32" />
+          <Property Name="PAID_YN" Type="Int32" />
+          <Property Name="SHARE_AMOUNT" Type="Int32" />
+          <Property Name="TOKEN" Type="Int32" />
+          <Property Name="PAY_DATE" Type="DateTime" Precision="0" />
+          <Property Name="APP_YN" Type="Int32" />
+          <Property Name="APP_DATE" Type="DateTime" Precision="0" />
+          <Property Name="APP_FEE" Type="Int32" />
+          <Property Name="APP_TOKEN" Type="Int32" />
+          <Property Name="APP_TIME" Type="DateTime" Precision="0" />
+          <Property Name="FAMILY_NO" Type="Int32" />
+          <Property Name="TDATE" Type="DateTime" Precision="0" />
+          <Property Name="Expr1" Type="Int32" Nullable="false" />
+          <Property Name="AGE" Type="Int32" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS1" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="STREET_ADDRESS2" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="CITY" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="STATE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="POSTAL_CODE" Type="Int32" />
+          <Property Name="PHONE_NUMBER1" Type="Int32" />
+          <Property Name="PHONE_NUMBER2" Type="Int32" />
+          <Property Name="CREDIT_LIMIT" Type="Int32" />
+          <Property Name="EMAIL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GENDER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USERID" Type="Int32" />
+          <Property Name="ADMINTOTAL" Type="Int32" />
+          <Property Name="Expr2" Type="Int32" />
+          <Property Name="F_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PANEL_G" Type="Int32" />
+          <Property Name="ADDMISSIONID" Type="Int32" />
+          <Property Name="PMNHP_NO" Type="Int32" />
+          <Property Name="PROCEDUREGROUP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PATIENTTYPE" Type="Int32" />
+          <Property Name="PROTOTAL" Type="Int32" />
+          <Property Name="Expr3" Type="Int32" />
+          <Property Name="NIC" Type="Int32" />
+          <Property Name="DATEOFBIRTH" Type="DateTime" Precision="0" />
+          <Property Name="SSN" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMG_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMG_CONTACT" Type="Int32" />
+          <Property Name="EMG_RELATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMG_HOME" Type="Int32" />
+          <Property Name="EMP_CODE" Type="Int32" />
+          <Property Name="EMP_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_DESG" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_CONTACT" Type="Int32" />
+          <Property Name="EMP_DEPART" Type="Int32" />
+          <Property Name="EMP_ADDRESS" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="POLICY_ID" Type="Int32" />
+          <Property Name="EFFECT_DATE" Type="DateTime" Precision="0" />
+          <Property Name="P_GROUP" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="P_HOLDER_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="P_DOB" Type="DateTime" Precision="0" />
+          <Property Name="P_RELATION" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="P_INSSURANCE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Expr4" Type="Int32" Nullable="false" />
+          <Property Name="DEPT_NAME" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="PRY" Type="Int32" />
+          <Property Name="TEL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CNIC_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_TBL_CONSULTANT_TBL_R_DEPT">
+          <End Role="TBL_R_DEPT" Type="Self.TBL_R_DEPT" Multiplicity="0..1" />
+          <End Role="TBL_CONSULTANT" Type="Self.TBL_CONSULTANT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_R_DEPT">
+              <PropertyRef Name="DEPT_ID" />
+            </Principal>
+            <Dependent Role="TBL_CONSULTANT">
+              <PropertyRef Name="DEP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_R_RECEIPT_TBL_CONSULTANT">
+          <End Role="TBL_CONSULTANT" Type="Self.TBL_CONSULTANT" Multiplicity="0..1" />
+          <End Role="TBL_R_RECEIPT" Type="Self.TBL_R_RECEIPT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CONSULTANT">
+              <PropertyRef Name="CON_JOB_ID" />
+            </Principal>
+            <Dependent Role="TBL_R_RECEIPT">
+              <PropertyRef Name="CONSULTANT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_R_TEST_TBL_CONSULTANT">
+          <End Role="TBL_CONSULTANT" Type="Self.TBL_CONSULTANT" Multiplicity="0..1" />
+          <End Role="TBL_R_TEST" Type="Self.TBL_R_TEST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CONSULTANT">
+              <PropertyRef Name="CON_JOB_ID" />
+            </Principal>
+            <Dependent Role="TBL_R_TEST">
+              <PropertyRef Name="CONST_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_R_RECEIPT_TBL_R_DEPT">
+          <End Role="TBL_R_DEPT" Type="Self.TBL_R_DEPT" Multiplicity="0..1" />
+          <End Role="TBL_R_RECEIPT" Type="Self.TBL_R_RECEIPT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_R_DEPT">
+              <PropertyRef Name="DEPT_ID" />
+            </Principal>
+            <Dependent Role="TBL_R_RECEIPT">
+              <PropertyRef Name="DEPT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_R_RECEIPT_TBL_R_PATIENT">
+          <End Role="TBL_R_PATIENT" Type="Self.TBL_R_PATIENT" Multiplicity="0..1" />
+          <End Role="TBL_R_RECEIPT" Type="Self.TBL_R_RECEIPT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_R_PATIENT">
+              <PropertyRef Name="MR_NO" />
+            </Principal>
+            <Dependent Role="TBL_R_RECEIPT">
+              <PropertyRef Name="MR_NO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_R_TEST_TBL_R_PATIENT">
+          <End Role="TBL_R_PATIENT" Type="Self.TBL_R_PATIENT" Multiplicity="0..1" />
+          <End Role="TBL_R_TEST" Type="Self.TBL_R_TEST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_R_PATIENT">
+              <PropertyRef Name="MR_NO" />
+            </Principal>
+            <Dependent Role="TBL_R_TEST">
+              <PropertyRef Name="MR_NO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_R_TEST_TBL_USER_D">
+          <End Role="TBL_USER_D" Type="Self.TBL_USER_D" Multiplicity="0..1" />
+          <End Role="TBL_R_TEST" Type="Self.TBL_R_TEST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER_D">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="TBL_R_TEST">
+              <PropertyRef Name="USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Pathology_dbEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="TBL_CONSULTANT" EntityType="Self.TBL_CONSULTANT" />
+          <EntitySet Name="TBL_R_CAT" EntityType="Self.TBL_R_CAT" />
+          <EntitySet Name="TBL_R_DEPT" EntityType="Self.TBL_R_DEPT" />
+          <EntitySet Name="TBL_R_PATIENT" EntityType="Self.TBL_R_PATIENT" />
+          <EntitySet Name="TBL_R_RECEIPT" EntityType="Self.TBL_R_RECEIPT" />
+          <EntitySet Name="TBL_R_TEST" EntityType="Self.TBL_R_TEST" />
+          <EntitySet Name="TBL_USER_D" EntityType="Self.TBL_USER_D" />
+          <EntitySet Name="View_Visit" EntityType="Self.View_Visit" />
+          <AssociationSet Name="FK_TBL_CONSULTANT_TBL_R_DEPT" Association="Self.FK_TBL_CONSULTANT_TBL_R_DEPT">
+            <End Role="TBL_R_DEPT" EntitySet="TBL_R_DEPT" />
+            <End Role="TBL_CONSULTANT" EntitySet="TBL_CONSULTANT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_R_RECEIPT_TBL_CONSULTANT" Association="Self.FK_TBL_R_RECEIPT_TBL_CONSULTANT">
+            <End Role="TBL_CONSULTANT" EntitySet="TBL_CONSULTANT" />
+            <End Role="TBL_R_RECEIPT" EntitySet="TBL_R_RECEIPT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_R_TEST_TBL_CONSULTANT" Association="Self.FK_TBL_R_TEST_TBL_CONSULTANT">
+            <End Role="TBL_CONSULTANT" EntitySet="TBL_CONSULTANT" />
+            <End Role="TBL_R_TEST" EntitySet="TBL_R_TEST" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_R_RECEIPT_TBL_R_DEPT" Association="Self.FK_TBL_R_RECEIPT_TBL_R_DEPT">
+            <End Role="TBL_R_DEPT" EntitySet="TBL_R_DEPT" />
+            <End Role="TBL_R_RECEIPT" EntitySet="TBL_R_RECEIPT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_R_RECEIPT_TBL_R_PATIENT" Association="Self.FK_TBL_R_RECEIPT_TBL_R_PATIENT">
+            <End Role="TBL_R_PATIENT" EntitySet="TBL_R_PATIENT" />
+            <End Role="TBL_R_RECEIPT" EntitySet="TBL_R_RECEIPT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_R_TEST_TBL_R_PATIENT" Association="Self.FK_TBL_R_TEST_TBL_R_PATIENT">
+            <End Role="TBL_R_PATIENT" EntitySet="TBL_R_PATIENT" />
+            <End Role="TBL_R_TEST" EntitySet="TBL_R_TEST" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_R_TEST_TBL_USER_D" Association="Self.FK_TBL_R_TEST_TBL_USER_D">
+            <End Role="TBL_USER_D" EntitySet="TBL_USER_D" />
+            <End Role="TBL_R_TEST" EntitySet="TBL_R_TEST" />
+          </AssociationSet>
+          <EntitySet Name="TBL_ORGINATION" EntityType="Pathology_dbModel.TBL_ORGINATION" />
+          <EntitySet Name="TBL_PAY_MAST" EntityType="Pathology_dbModel.TBL_PAY_MAST" />
+          <AssociationSet Name="FK_TBL_USER_D_TBL_ORGINATION" Association="Pathology_dbModel.FK_TBL_USER_D_TBL_ORGINATION">
+            <End Role="TBL_ORGINATION" EntitySet="TBL_ORGINATION" />
+            <End Role="TBL_USER_D" EntitySet="TBL_USER_D" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Pathology_dbModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Pathology_dbModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="TBl_CONS_FEE" EntityType="Pathology_dbModel.TBl_CONS_FEE" />
+          <AssociationSet Name="FK_TBl_CONS_FEE_TBL_CONSULTANT" Association="Pathology_dbModel.FK_TBl_CONS_FEE_TBL_CONSULTANT">
+            <End Role="TBL_CONSULTANT" EntitySet="TBL_CONSULTANT" />
+            <End Role="TBl_CONS_FEE" EntitySet="TBl_CONS_FEE" />
+          </AssociationSet>
+          <EntitySet Name="TBL_Gender" EntityType="Pathology_dbModel.TBL_Gender" />
+          <EntitySet Name="TBL_MASTER_PROCEDURE" EntityType="Pathology_dbModel.TBL_MASTER_PROCEDURE" />
+          <EntitySet Name="TBL_PROCEDURE_CAT" EntityType="Pathology_dbModel.TBL_PROCEDURE_CAT" />
+          <AssociationSet Name="FK_TBL_PROCEDURE_CAT_TBL_R_DEPT" Association="Pathology_dbModel.FK_TBL_PROCEDURE_CAT_TBL_R_DEPT">
+            <End Role="TBL_R_DEPT" EntitySet="TBL_R_DEPT" />
+            <End Role="TBL_PROCEDURE_CAT" EntitySet="TBL_PROCEDURE_CAT" />
+          </AssociationSet>
+          <EntitySet Name="TBL_MPROC_DETAIL" EntityType="Pathology_dbModel.TBL_MPROC_DETAIL" />
+          <EntitySet Name="TBL_MASTER_PRO_ENTRY" EntityType="Pathology_dbModel.TBL_MASTER_PRO_ENTRY" />
+          <AssociationSet Name="FK_TBL_MASTER_PRO_ENTRY_TBL_PROCEDURE_CAT" Association="Pathology_dbModel.FK_TBL_MASTER_PRO_ENTRY_TBL_PROCEDURE_CAT">
+            <End Role="TBL_PROCEDURE_CAT" EntitySet="TBL_PROCEDURE_CAT" />
+            <End Role="TBL_MASTER_PRO_ENTRY" EntitySet="TBL_MASTER_PRO_ENTRY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_MPROC_DETAIL_TBL_MASTER_PRO_ENTRY" Association="Pathology_dbModel.FK_TBL_MPROC_DETAIL_TBL_MASTER_PRO_ENTRY">
+            <End Role="TBL_MASTER_PRO_ENTRY" EntitySet="TBL_MASTER_PRO_ENTRY" />
+            <End Role="TBL_MPROC_DETAIL" EntitySet="TBL_MPROC_DETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_MASTER_PROCEDURE_TBL_R_PATIENT" Association="Pathology_dbModel.FK_TBL_MASTER_PROCEDURE_TBL_R_PATIENT">
+            <End Role="TBL_R_PATIENT" EntitySet="TBL_R_PATIENT" />
+            <End Role="TBL_MASTER_PROCEDURE" EntitySet="TBL_MASTER_PROCEDURE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_MPROC_DETAIL_TBL_MASTER_PROCEDURE" Association="Pathology_dbModel.FK_TBL_MPROC_DETAIL_TBL_MASTER_PROCEDURE">
+            <End Role="TBL_MASTER_PROCEDURE" EntitySet="TBL_MASTER_PROCEDURE" />
+            <End Role="TBL_MPROC_DETAIL" EntitySet="TBL_MPROC_DETAIL" />
+          </AssociationSet>
+          <EntitySet Name="TBL_R_PANEL" EntityType="Pathology_dbModel.TBL_R_PANEL" />
+          <FunctionImport Name="procedureReport" ReturnType="Collection(Pathology_dbModel.procedureReport_Result)" />
+          <EntitySet Name="Procedure_slip" EntityType="Pathology_dbModel.Procedure_slip" />
+          <EntitySet Name="VIEW_LAB" EntityType="Pathology_dbModel.VIEW_LAB" />
+        </EntityContainer>
+        <EntityType Name="TBL_ORGINATION">
+          <Key>
+            <PropertyRef Name="ORG_ID" />
+          </Key>
+          <Property Name="ORG_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORGNAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ORG_AVBRIVATION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ORG_ADDRESS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ORG_PHONE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ORG_LOCATION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ORG_LOGO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ORG_VISSION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ORG_EMAIL" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ORG_A" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ORG_B" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ORG_C" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ORG_CODE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ORG_BARCH" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ORG_HEAD" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TBL_USER_D" Relationship="Pathology_dbModel.FK_TBL_USER_D_TBL_ORGINATION" FromRole="TBL_ORGINATION" ToRole="TBL_USER_D" />
+        </EntityType>
+        <EntityType Name="TBL_PAY_MAST">
+          <Key>
+            <PropertyRef Name="EMP_CODE" />
+          </Key>
+          <Property Name="EMP_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_FNAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_MNAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SEX_MF" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_CELL" Type="Int32" />
+          <Property Name="BIRTH_DATE" Type="DateTime" Precision="0" />
+          <Property Name="ID_CARD" Type="Int32" />
+          <Property Name="EMP_PHONE" Type="Int32" />
+          <Property Name="EMP_EMAIL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_POSADD" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_RELIGION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_SECT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_CAST" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ID_EXP" Type="DateTime" Precision="0" />
+          <Property Name="EMP_DESG" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_PIC" Type="Int32" />
+          <Property Name="DEP_CODE" Type="Int32" />
+          <Property Name="JOIN_DATE" Type="DateTime" Precision="0" />
+          <Property Name="GROSS_SAL" Type="Int32" />
+          <Property Name="INCOME_TAX" Type="Int32" />
+          <Property Name="EMP_TAXNO" Type="Int32" />
+          <Property Name="EMP_ACCNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REC_DATE" Type="DateTime" Precision="0" />
+          <Property Name="TERMINAT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NET_SLRY" Type="Int32" />
+          <Property Name="INC_PAY" Type="Int32" />
+          <Property Name="CITY_CODE" Type="Int32" />
+          <Property Name="GROUP_CODE" Type="Int32" />
+          <Property Name="RSG_DATE" Type="DateTime" Precision="0" />
+          <Property Name="PAY_TYPE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="STATION" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EOBI" Type="Int32" />
+          <Property Name="CMP_CODE" Type="Int32" />
+          <Property Name="ETP_CODE" Type="Int32" />
+          <Property Name="AUTOTAX" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="B_CODE" Type="Int32" />
+          <Property Name="APPYN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SALCODE" Type="Int32" />
+          <Property Name="SOCIALYN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EOBIYN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USRID" Type="Int32" />
+          <Property Name="USTTY" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SYS_DATE" Type="DateTime" Precision="0" />
+          <Property Name="D_CODE" Type="Int32" />
+          <Property Name="EMPADD" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Name="MESSDED" Type="Int32" />
+          <Property Name="OVERGB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SHIFT_DATE" Type="DateTime" Precision="0" />
+          <Property Name="SHTIME_I" Type="DateTime" Precision="0" />
+          <Property Name="SHTIME_O" Type="DateTime" Precision="0" />
+          <Property Name="WEEK_OFF" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AUTOEXP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CONYN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SOCIALNO" Type="Int32" />
+          <Property Name="CON_DATE" Type="DateTime" Precision="0" />
+          <Property Name="BELONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EOBINO" Type="Int32" />
+          <Property Name="FACTYN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ALI_DATE" Type="DateTime" Precision="0" />
+          <Property Name="EMP_REF" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CARDNO" Type="Int32" />
+          <Property Name="HEALTH" Type="Int32" />
+          <Property Name="FAX_NO" Type="Int32" />
+          <Property Name="EMNATI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMDDIS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMDPRO" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMPTEH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMPDIS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMPPRO" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PREADD" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="PRETEH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PREDIS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PREPRO" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FACTD" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="POSDIS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="POSPRO" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMMARI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="RSGTYP" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BANK_ACC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="E1" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Name="E2" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Name="E3" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Name="EX" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Name="OLDCOD" Type="Int32" />
+          <Property Name="MACCOD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TCODE" Type="Int32" />
+          <Property Name="NCODE" Type="Int32" />
+          <Property Name="PMDREG" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PMDEXP" Type="DateTime" Precision="0" />
+          <Property Name="FACREG" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FACEXP" Type="DateTime" Precision="0" />
+          <Property Name="SHTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMPTIT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="REBATE" Type="Int32" />
+          <Property Name="ATT_YN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PFNDYN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FCTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="INCHARGE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PNCREG" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PNCEXP" Type="DateTime" Precision="0" />
+          <Property Name="XADATE" Type="DateTime" Precision="0" />
+          <Property Name="XCDATE" Type="DateTime" Precision="0" />
+          <Property Name="XRDATE" Type="DateTime" Precision="0" />
+          <Property Name="PBTIME" Type="Time" Precision="7" />
+          <Property Name="PBINCR" Type="Int32" />
+          <Property Name="JOINSAL" Type="Int32" />
+          <Property Name="RSGDAYS" Type="Int32" />
+          <Property Name="CVCODE" Type="Int32" />
+          <Property Name="EMPARE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PKHORS" Type="Int32" />
+          <Property Name="SECURTY" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="E_DI" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="C_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="D_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="RWAL_FOUN" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="S_CARD" Type="Int32" />
+          <Property Name="DOC" Type="Int32" />
+          <Property Name="APPL" Type="Int32" />
+          <Property Name="BIOT" Type="Int32" />
+          <Property Name="BANK" Type="Int32" />
+          <Property Name="FEE" Type="Int32" />
+          <Property Name="RSG_CODE" Type="Int32" />
+          <Property Name="DOCYN" Type="Int32" />
+          <Property Name="MED_ALLIED" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="PRIVATE_PRACTICES" Type="Int32" />
+          <Property Name="SIGN" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="HOSTELYN" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HOSTEL_CHARGES" Type="Int32" />
+          <Property Name="DAY_CAREYN" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DAYCARE_CHARGES" Type="Int32" />
+          <Property Name="DRIVE_LINCES" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ENT_SYSDATE" Type="DateTime" Precision="0" />
+          <Property Name="EOBI_MON" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EOBI_YEAR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EOBI_R_DATE" Type="DateTime" Precision="0" />
+          <Property Name="DRYN" Type="Int32" />
+          <Property Name="SOCIAL_AMT" Type="Int32" />
+          <Property Name="EMP_TYPE" Type="Int32" />
+          <Property Name="EOBI_STATUS" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_TBL_USER_D_TBL_ORGINATION">
+          <End Type="Pathology_dbModel.TBL_ORGINATION" Role="TBL_ORGINATION" Multiplicity="0..1" />
+          <End Type="Pathology_dbModel.TBL_USER_D" Role="TBL_USER_D" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_ORGINATION">
+              <PropertyRef Name="ORG_ID" />
+            </Principal>
+            <Dependent Role="TBL_USER_D">
+              <PropertyRef Name="ORG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="TBl_CONS_FEE">
+          <Key>
+            <PropertyRef Name="fee_id" />
+          </Key>
+          <Property Name="fee_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fee_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fee_Fee" Type="Int32" />
+          <Property Name="fee_status" Type="Int32" />
+          <Property Name="fee_org" Type="Int32" />
+          <Property Name="fee_user" Type="Int32" />
+          <Property Name="user_date" Type="DateTime" Precision="0" />
+          <Property Name="fee_cons" Type="Int32" />
+          <NavigationProperty Name="TBL_CONSULTANT" Relationship="Pathology_dbModel.FK_TBl_CONS_FEE_TBL_CONSULTANT" FromRole="TBl_CONS_FEE" ToRole="TBL_CONSULTANT" />
+        </EntityType>
+        <Association Name="FK_TBl_CONS_FEE_TBL_CONSULTANT">
+          <End Type="Pathology_dbModel.TBL_CONSULTANT" Role="TBL_CONSULTANT" Multiplicity="0..1" />
+          <End Type="Pathology_dbModel.TBl_CONS_FEE" Role="TBl_CONS_FEE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CONSULTANT">
+              <PropertyRef Name="CON_JOB_ID" />
+            </Principal>
+            <Dependent Role="TBl_CONS_FEE">
+              <PropertyRef Name="fee_cons" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TBL_Gender">
+          <Key>
+            <PropertyRef Name="G_id" />
+          </Key>
+          <Property Name="G_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="G_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="G_status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TBL_MASTER_PROCEDURE">
+          <Key>
+            <PropertyRef Name="MP_CODE" />
+          </Key>
+          <Property Name="MP_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MP_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MR" Type="Int32" />
+          <Property Name="MP_NETAMOUNT" Type="Int32" />
+          <Property Name="MP_DISCOUNT_ID" Type="Int32" />
+          <Property Name="MP_DISCOUNT_PER" Type="Int32" />
+          <Property Name="MP_DIS_AMOUNT" Type="Int32" />
+          <Property Name="MP_GRANT_TOTAL" Type="Int32" />
+          <Property Name="MP_PIAD_AMOUNT" Type="Int32" />
+          <Property Name="MP_BLALANCE" Type="Int32" />
+          <Property Name="MP_USER_dATE" Type="DateTime" Precision="3" />
+          <Property Name="MP_USER_ORG" Type="Int32" />
+          <Property Name="MP_USER_ID" Type="Int32" />
+          <Property Name="MP_USER_MPCODE" Type="Int32" />
+          <Property Name="MP_CLEAR_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MP_STATUS" Type="Int32" />
+          <Property Name="MP_STATUS_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MP_STATUS_USER_ID" Type="Int32" />
+          <Property Name="MP_STATUS_USER_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MP_PANEL" Type="Int32" />
+          <Property Name="MP_AMOUNT" Type="Int32" />
+          <Property Name="MP_PANEL_PAID" Type="Int32" />
+          <Property Name="MP_REM_PANEL" Type="Int32" />
+          <Property Name="MP_SHIFT" Type="Int32" />
+          <Property Name="MP_SHIFT_ID" Type="Int32" />
+          <Property Name="MP_CONS" Type="Int32" />
+          <Property Name="MP_SHARE_AMOUNT" Type="Int32" />
+          <Property Name="MP_SHARE_CONS" Type="Int32" />
+          <Property Name="MP_SHARED_PAID_STATUS" Type="Int32" />
+          <Property Name="MP_SHARED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MP_SHARED_USER_ID" Type="Int32" />
+          <NavigationProperty Name="TBL_R_PATIENT" Relationship="Pathology_dbModel.FK_TBL_MASTER_PROCEDURE_TBL_R_PATIENT" FromRole="TBL_MASTER_PROCEDURE" ToRole="TBL_R_PATIENT" />
+          <NavigationProperty Name="TBL_MPROC_DETAIL" Relationship="Pathology_dbModel.FK_TBL_MPROC_DETAIL_TBL_MASTER_PROCEDURE" FromRole="TBL_MASTER_PROCEDURE" ToRole="TBL_MPROC_DETAIL" />
+        </EntityType>
+        <EntityType Name="TBL_PROCEDURE_CAT">
+          <Key>
+            <PropertyRef Name="pc_id" />
+          </Key>
+          <Property Name="pc_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pc_name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="user_org" Type="Int32" />
+          <Property Name="user_Date" Type="DateTime" Precision="3" />
+          <Property Name="dept" Type="Int32" />
+          <Property Name="org_id" Type="Int32" />
+          <NavigationProperty Name="TBL_R_DEPT" Relationship="Pathology_dbModel.FK_TBL_PROCEDURE_CAT_TBL_R_DEPT" FromRole="TBL_PROCEDURE_CAT" ToRole="TBL_R_DEPT" />
+          <NavigationProperty Name="TBL_MASTER_PRO_ENTRY" Relationship="Pathology_dbModel.FK_TBL_MASTER_PRO_ENTRY_TBL_PROCEDURE_CAT" FromRole="TBL_PROCEDURE_CAT" ToRole="TBL_MASTER_PRO_ENTRY" />
+        </EntityType>
+        <Association Name="FK_TBL_PROCEDURE_CAT_TBL_R_DEPT">
+          <End Type="Pathology_dbModel.TBL_R_DEPT" Role="TBL_R_DEPT" Multiplicity="0..1" />
+          <End Type="Pathology_dbModel.TBL_PROCEDURE_CAT" Role="TBL_PROCEDURE_CAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_R_DEPT">
+              <PropertyRef Name="DEPT_ID" />
+            </Principal>
+            <Dependent Role="TBL_PROCEDURE_CAT">
+              <PropertyRef Name="dept" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TBL_MPROC_DETAIL">
+          <Key>
+            <PropertyRef Name="MPD_ID" />
+          </Key>
+          <Property Name="MPD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MP_CODE" Type="Int32" />
+          <Property Name="MR" Type="Int32" />
+          <Property Name="MPD_SAMPLE_ID" Type="Int32" />
+          <Property Name="MPD_SAMPLE_YN" Type="Int32" />
+          <Property Name="MPD_user_id" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="MPD_USER_ORG" Type="Int32" />
+          <Property Name="MPD_USER_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MPD_USER_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="MPD_LAB_NO" Type="Int32" />
+          <Property Name="MPD_CAT" Type="Int32" />
+          <Property Name="MPD_PERFORMED" Type="Int32" />
+          <Property Name="MPD_DOCYN" Type="Int32" />
+          <Property Name="MPD_DOC_ID" Type="Int32" />
+          <Property Name="MPD_DOC_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MPD_DOC_REMARKS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="MPD_REPORT" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="MPD_SAMPLE_SATATUS" Type="Int32" />
+          <Property Name="MPD_REFER" Type="Int32" />
+          <Property Name="MPD_P_USER_ID" Type="Int32" />
+          <Property Name="MPD_P_USERDATE" Type="DateTime" Precision="3" />
+          <Property Name="MPD_TECH_ID" Type="Int32" />
+          <Property Name="MPD_TECH_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MPD_order_id" Type="Int32" />
+          <Property Name="pro_id" Type="Int32" />
+          <NavigationProperty Name="TBL_MASTER_PRO_ENTRY" Relationship="Pathology_dbModel.FK_TBL_MPROC_DETAIL_TBL_MASTER_PRO_ENTRY" FromRole="TBL_MPROC_DETAIL" ToRole="TBL_MASTER_PRO_ENTRY" />
+          <NavigationProperty Name="TBL_MASTER_PROCEDURE" Relationship="Pathology_dbModel.FK_TBL_MPROC_DETAIL_TBL_MASTER_PROCEDURE" FromRole="TBL_MPROC_DETAIL" ToRole="TBL_MASTER_PROCEDURE" />
+          <Property Name="pro_amount" Type="Int32" />
+          <Property Name="pro_discount" Type="Int32" />
+          <Property Name="PRICE" Type="Int32" />
+          <Property Name="MPD_QTY" Type="Int32" />
+          <Property Name="MPD_AMOUNT" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TBL_MASTER_PRO_ENTRY">
+          <Key>
+            <PropertyRef Name="PRO_ID" />
+          </Key>
+          <Property Name="PRO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PRO_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PRO_CAT" Type="Int32" />
+          <Property Name="PRO_DISCOUNT" Type="Int32" />
+          <Property Name="PRO_AMOUNT" Type="Int32" />
+          <Property Name="PRO_PRICE" Type="Int32" />
+          <Property Name="PRO_EXPENSE" Type="Int32" />
+          <Property Name="PRO_TYPE" Type="Int32" />
+          <Property Name="PRO_HEAD" Type="Int32" />
+          <Property Name="PRO_ORG" Type="Int32" />
+          <Property Name="PRO_USER_ID" Type="Int32" />
+          <Property Name="PRO_USER_DATE" Type="DateTime" Precision="3" />
+          <Property Name="PRO_REFERANGE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PRO_MEASUREMENT_UNIT" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PRO_SAMPLE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PRO_SPECIMEN" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PRO_PANEL_TYPE" Type="Int32" />
+          <Property Name="PRO_CODE" Type="Int32" />
+          <Property Name="pro_shift" Type="Int32" />
+          <Property Name="PRO_CONS" Type="Int32" />
+          <Property Name="PRO_STATE" Type="Int32" />
+          <NavigationProperty Name="TBL_PROCEDURE_CAT" Relationship="Pathology_dbModel.FK_TBL_MASTER_PRO_ENTRY_TBL_PROCEDURE_CAT" FromRole="TBL_MASTER_PRO_ENTRY" ToRole="TBL_PROCEDURE_CAT" />
+          <NavigationProperty Name="TBL_MPROC_DETAIL" Relationship="Pathology_dbModel.FK_TBL_MPROC_DETAIL_TBL_MASTER_PRO_ENTRY" FromRole="TBL_MASTER_PRO_ENTRY" ToRole="TBL_MPROC_DETAIL" />
+        </EntityType>
+        <Association Name="FK_TBL_MASTER_PRO_ENTRY_TBL_PROCEDURE_CAT">
+          <End Type="Pathology_dbModel.TBL_PROCEDURE_CAT" Role="TBL_PROCEDURE_CAT" Multiplicity="0..1" />
+          <End Type="Pathology_dbModel.TBL_MASTER_PRO_ENTRY" Role="TBL_MASTER_PRO_ENTRY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_PROCEDURE_CAT">
+              <PropertyRef Name="pc_id" />
+            </Principal>
+            <Dependent Role="TBL_MASTER_PRO_ENTRY">
+              <PropertyRef Name="PRO_CAT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_MPROC_DETAIL_TBL_MASTER_PRO_ENTRY">
+          <End Type="Pathology_dbModel.TBL_MASTER_PRO_ENTRY" Role="TBL_MASTER_PRO_ENTRY" Multiplicity="0..1" />
+          <End Type="Pathology_dbModel.TBL_MPROC_DETAIL" Role="TBL_MPROC_DETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_MASTER_PRO_ENTRY">
+              <PropertyRef Name="PRO_ID" />
+            </Principal>
+            <Dependent Role="TBL_MPROC_DETAIL">
+              <PropertyRef Name="pro_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_MASTER_PROCEDURE_TBL_R_PATIENT">
+          <End Type="Pathology_dbModel.TBL_R_PATIENT" Role="TBL_R_PATIENT" Multiplicity="0..1" />
+          <End Type="Pathology_dbModel.TBL_MASTER_PROCEDURE" Role="TBL_MASTER_PROCEDURE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_R_PATIENT">
+              <PropertyRef Name="MR_NO" />
+            </Principal>
+            <Dependent Role="TBL_MASTER_PROCEDURE">
+              <PropertyRef Name="MR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_MPROC_DETAIL_TBL_MASTER_PROCEDURE">
+          <End Type="Pathology_dbModel.TBL_MASTER_PROCEDURE" Role="TBL_MASTER_PROCEDURE" Multiplicity="0..1" />
+          <End Type="Pathology_dbModel.TBL_MPROC_DETAIL" Role="TBL_MPROC_DETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_MASTER_PROCEDURE">
+              <PropertyRef Name="MP_CODE" />
+            </Principal>
+            <Dependent Role="TBL_MPROC_DETAIL">
+              <PropertyRef Name="MP_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TBL_R_PANEL">
+          <Key>
+            <PropertyRef Name="panel_id" />
+          </Key>
+          <Property Name="panel_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="panel_name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="procedureReport_Result">
+          <Property Type="Int32" Name="MPD_ID" Nullable="false" />
+          <Property Type="Int32" Name="MP_CODE" Nullable="true" />
+          <Property Type="Int32" Name="MR" Nullable="true" />
+          <Property Type="Int32" Name="MPD_SAMPLE_ID" Nullable="true" />
+          <Property Type="Int32" Name="MPD_SAMPLE_YN" Nullable="true" />
+          <Property Type="String" Name="MPD_user_id" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="MPD_USER_ORG" Nullable="true" />
+          <Property Type="DateTime" Name="MPD_USER_DATE" Nullable="true" Precision="23" />
+          <Property Type="String" Name="MPD_USER_NAME" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="MPD_LAB_NO" Nullable="true" />
+          <Property Type="Int32" Name="MPD_CAT" Nullable="true" />
+          <Property Type="Int32" Name="MPD_PERFORMED" Nullable="true" />
+          <Property Type="Int32" Name="MPD_DOCYN" Nullable="true" />
+          <Property Type="Int32" Name="MPD_DOC_ID" Nullable="true" />
+          <Property Type="DateTime" Name="MPD_DOC_DATE" Nullable="true" Precision="23" />
+          <Property Type="String" Name="MPD_DOC_REMARKS" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="MPD_REPORT" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="MPD_SAMPLE_SATATUS" Nullable="true" />
+          <Property Type="Int32" Name="MPD_REFER" Nullable="true" />
+          <Property Type="Int32" Name="MPD_P_USER_ID" Nullable="true" />
+          <Property Type="DateTime" Name="MPD_P_USERDATE" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="MPD_TECH_ID" Nullable="true" />
+          <Property Type="DateTime" Name="MPD_TECH_DATE" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="MPD_order_id" Nullable="true" />
+          <Property Type="Int32" Name="pro_id" Nullable="true" />
+          <Property Type="Int32" Name="pro_amount" Nullable="true" />
+          <Property Type="Int32" Name="pro_discount" Nullable="true" />
+          <Property Type="Int32" Name="PRICE" Nullable="true" />
+          <Property Type="Int32" Name="MPD_QTY" Nullable="true" />
+          <Property Type="Int32" Name="MPD_AMOUNT" Nullable="true" />
+          <Property Type="Int32" Name="MP_CODE1" Nullable="false" />
+          <Property Type="DateTime" Name="MP_DATE" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="MR1" Nullable="true" />
+          <Property Type="Int32" Name="MP_NETAMOUNT" Nullable="true" />
+          <Property Type="Int32" Name="MP_DISCOUNT_ID" Nullable="true" />
+          <Property Type="Int32" Name="MP_DISCOUNT_PER" Nullable="true" />
+          <Property Type="Int32" Name="MP_DIS_AMOUNT" Nullable="true" />
+          <Property Type="Int32" Name="MP_GRANT_TOTAL" Nullable="true" />
+          <Property Type="Int32" Name="MP_PIAD_AMOUNT" Nullable="true" />
+          <Property Type="Int32" Name="MP_BLALANCE" Nullable="true" />
+          <Property Type="DateTime" Name="MP_USER_dATE" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="MP_USER_ORG" Nullable="true" />
+          <Property Type="Int32" Name="MP_USER_ID" Nullable="true" />
+          <Property Type="Int32" Name="MP_USER_MPCODE" Nullable="true" />
+          <Property Type="DateTime" Name="MP_CLEAR_DATE" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="MP_STATUS" Nullable="true" />
+          <Property Type="DateTime" Name="MP_STATUS_DATE" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="MP_STATUS_USER_ID" Nullable="true" />
+          <Property Type="DateTime" Name="MP_STATUS_USER_DATE" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="MP_PANEL" Nullable="true" />
+          <Property Type="Int32" Name="MP_AMOUNT" Nullable="true" />
+          <Property Type="Int32" Name="MP_PANEL_PAID" Nullable="true" />
+          <Property Type="Int32" Name="MP_REM_PANEL" Nullable="true" />
+          <Property Type="Int32" Name="MP_SHIFT" Nullable="true" />
+          <Property Type="Int32" Name="MP_SHIFT_ID" Nullable="true" />
+          <Property Type="Int32" Name="MP_CONS" Nullable="true" />
+          <Property Type="Int32" Name="MP_SHARE_AMOUNT" Nullable="true" />
+          <Property Type="Int32" Name="MP_SHARE_CONS" Nullable="true" />
+          <Property Type="Int32" Name="MP_SHARED_PAID_STATUS" Nullable="true" />
+          <Property Type="DateTime" Name="MP_SHARED_DATE" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="MP_SHARED_USER_ID" Nullable="true" />
+          <Property Type="Int32" Name="FAMILY_NO" Nullable="true" />
+          <Property Type="DateTime" Name="TDATE" Nullable="true" />
+          <Property Type="Int32" Name="MR_NO" Nullable="false" />
+          <Property Type="Int32" Name="AGE" Nullable="true" />
+          <Property Type="String" Name="FIRST_NAME" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="ADDRESS1" Nullable="true" MaxLength="1000" />
+          <Property Type="String" Name="STREET_ADDRESS2" Nullable="true" MaxLength="1000" />
+          <Property Type="String" Name="CITY" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="STATE" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="POSTAL_CODE" Nullable="true" />
+          <Property Type="Int32" Name="PHONE_NUMBER1" Nullable="true" />
+          <Property Type="Int32" Name="PHONE_NUMBER2" Nullable="true" />
+          <Property Type="Int32" Name="CREDIT_LIMIT" Nullable="true" />
+          <Property Type="String" Name="EMAIL" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="GENDER" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="USERID" Nullable="true" />
+          <Property Type="Int32" Name="ADMINTOTAL" Nullable="true" />
+          <Property Type="Int32" Name="DEPT_ID" Nullable="true" />
+          <Property Type="String" Name="F_NAME" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="PANEL_G" Nullable="true" />
+          <Property Type="Int32" Name="ADDMISSIONID" Nullable="true" />
+          <Property Type="Int32" Name="PMNHP_NO" Nullable="true" />
+          <Property Type="String" Name="PROCEDUREGROUP" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="PATIENTTYPE" Nullable="true" />
+          <Property Type="Int32" Name="PROTOTAL" Nullable="true" />
+          <Property Type="Int32" Name="STATUS" Nullable="true" />
+          <Property Type="Int32" Name="NIC" Nullable="true" />
+          <Property Type="DateTime" Name="DATEOFBIRTH" Nullable="true" />
+          <Property Type="String" Name="SSN" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="EMG_NAME" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="EMG_CONTACT" Nullable="true" />
+          <Property Type="String" Name="EMG_RELATION" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="EMG_HOME" Nullable="true" />
+          <Property Type="Int32" Name="EMP_CODE" Nullable="true" />
+          <Property Type="String" Name="EMP_NAME" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="EMP_DESG" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="EMP_CONTACT" Nullable="true" />
+          <Property Type="Int32" Name="EMP_DEPART" Nullable="true" />
+          <Property Type="String" Name="EMP_ADDRESS" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="POLICY_ID" Nullable="true" />
+          <Property Type="DateTime" Name="EFFECT_DATE" Nullable="true" />
+          <Property Type="String" Name="P_GROUP" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="P_HOLDER_NAME" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="P_DOB" Nullable="true" />
+          <Property Type="String" Name="P_RELATION" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="P_INSSURANCE" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="TEL_NO" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CNIC_NO" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="Procedure_slip">
+          <Key>
+            <PropertyRef Name="mpd_id" />
+            <PropertyRef Name="mp_code" />
+            <PropertyRef Name="mr_no" />
+          </Key>
+          <Property Name="mpd_id" Type="Int32" Nullable="false" />
+          <Property Name="mp_code" Type="Int32" Nullable="false" />
+          <Property Name="mr" Type="Int32" />
+          <Property Name="price" Type="Int32" />
+          <Property Name="mp_user_id" Type="Int32" />
+          <Property Name="mr_no" Type="Int32" Nullable="false" />
+          <Property Name="First_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Tel_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PRO_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="VIEW_LAB">
+          <Key>
+            <PropertyRef Name="TEST_ID" />
+            <PropertyRef Name="MR_NO" />
+            <PropertyRef Name="PRO_ID" />
+          </Key>
+          <Property Name="TEST_ID" Type="Int32" Nullable="false" />
+          <Property Name="MR_NO" Type="Int32" Nullable="false" />
+          <Property Name="AGE" Type="Int32" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS1" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="GENDER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MP_GRANT_TOTAL" Type="Int32" />
+          <Property Name="MP_USER_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MP_USER_ID" Type="Int32" />
+          <Property Name="MP_CONS" Type="Int32" />
+          <Property Name="MPD_USER_ID" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="MPD_SAMPLE_ID" Type="Int32" />
+          <Property Name="MPD_SAMPLE_YN" Type="Int32" />
+          <Property Name="PRO_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PRO_CAT" Type="Int32" />
+          <Property Name="PRO_ID" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Pathology_dbModelStoreContainer" CdmEntityContainer="Pathology_dbEntities1">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Pathology_dbModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_CONSULTANT">
+            <EntityTypeMapping TypeName="Pathology_dbModel.TBL_CONSULTANT">
+              <MappingFragment StoreEntitySet="TBL_CONSULTANT">
+                <ScalarProperty Name="CON_JOB_ID" ColumnName="CON_JOB_ID" />
+                <ScalarProperty Name="CON_NAME" ColumnName="CON_NAME" />
+                <ScalarProperty Name="CON_FEE" ColumnName="CON_FEE" />
+                <ScalarProperty Name="CD" ColumnName="CD" />
+                <ScalarProperty Name="CTFEE" ColumnName="CTFEE" />
+                <ScalarProperty Name="DEGREE" ColumnName="DEGREE" />
+                <ScalarProperty Name="ER_FEE" ColumnName="ER_FEE" />
+                <ScalarProperty Name="SP_VISIT" ColumnName="SP_VISIT" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="FELLOW_UP" ColumnName="FELLOW_UP" />
+                <ScalarProperty Name="DESG" ColumnName="DESG" />
+                <ScalarProperty Name="DOC_SHARE" ColumnName="DOC_SHARE" />
+                <ScalarProperty Name="DEP_ID" ColumnName="DEP_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_R_CAT">
+            <EntityTypeMapping TypeName="Pathology_dbModel.TBL_R_CAT">
+              <MappingFragment StoreEntitySet="TBL_R_CAT">
+                <ScalarProperty Name="CAT_ID" ColumnName="CAT_ID" />
+                <ScalarProperty Name="CAT_NAME" ColumnName="CAT_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_R_DEPT">
+            <EntityTypeMapping TypeName="Pathology_dbModel.TBL_R_DEPT">
+              <MappingFragment StoreEntitySet="TBL_R_DEPT">
+                <ScalarProperty Name="DEPT_ID" ColumnName="DEPT_ID" />
+                <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+                <ScalarProperty Name="PRY" ColumnName="PRY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_R_PATIENT">
+            <EntityTypeMapping TypeName="Pathology_dbModel.TBL_R_PATIENT">
+              <MappingFragment StoreEntitySet="TBL_R_PATIENT">
+                <ScalarProperty Name="FAMILY_NO" ColumnName="FAMILY_NO" />
+                <ScalarProperty Name="TDATE" ColumnName="TDATE" />
+                <ScalarProperty Name="MR_NO" ColumnName="MR_NO" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS1" />
+                <ScalarProperty Name="STREET_ADDRESS2" ColumnName="STREET_ADDRESS2" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="POSTAL_CODE" ColumnName="POSTAL_CODE" />
+                <ScalarProperty Name="PHONE_NUMBER1" ColumnName="PHONE_NUMBER1" />
+                <ScalarProperty Name="PHONE_NUMBER2" ColumnName="PHONE_NUMBER2" />
+                <ScalarProperty Name="CREDIT_LIMIT" ColumnName="CREDIT_LIMIT" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="ADMINTOTAL" ColumnName="ADMINTOTAL" />
+                <ScalarProperty Name="DEPT_ID" ColumnName="DEPT_ID" />
+                <ScalarProperty Name="F_NAME" ColumnName="F_NAME" />
+                <ScalarProperty Name="PANEL_G" ColumnName="PANEL_G" />
+                <ScalarProperty Name="ADDMISSIONID" ColumnName="ADDMISSIONID" />
+                <ScalarProperty Name="PMNHP_NO" ColumnName="PMNHP_NO" />
+                <ScalarProperty Name="PROCEDUREGROUP" ColumnName="PROCEDUREGROUP" />
+                <ScalarProperty Name="PATIENTTYPE" ColumnName="PATIENTTYPE" />
+                <ScalarProperty Name="PROTOTAL" ColumnName="PROTOTAL" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="NIC" ColumnName="NIC" />
+                <ScalarProperty Name="DATEOFBIRTH" ColumnName="DATEOFBIRTH" />
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+                <ScalarProperty Name="EMG_NAME" ColumnName="EMG_NAME" />
+                <ScalarProperty Name="EMG_CONTACT" ColumnName="EMG_CONTACT" />
+                <ScalarProperty Name="EMG_RELATION" ColumnName="EMG_RELATION" />
+                <ScalarProperty Name="EMG_HOME" ColumnName="EMG_HOME" />
+                <ScalarProperty Name="EMP_CODE" ColumnName="EMP_CODE" />
+                <ScalarProperty Name="EMP_NAME" ColumnName="EMP_NAME" />
+                <ScalarProperty Name="EMP_DESG" ColumnName="EMP_DESG" />
+                <ScalarProperty Name="EMP_CONTACT" ColumnName="EMP_CONTACT" />
+                <ScalarProperty Name="EMP_DEPART" ColumnName="EMP_DEPART" />
+                <ScalarProperty Name="EMP_ADDRESS" ColumnName="EMP_ADDRESS" />
+                <ScalarProperty Name="POLICY_ID" ColumnName="POLICY_ID" />
+                <ScalarProperty Name="EFFECT_DATE" ColumnName="EFFECT_DATE" />
+                <ScalarProperty Name="P_GROUP" ColumnName="P_GROUP" />
+                <ScalarProperty Name="P_HOLDER_NAME" ColumnName="P_HOLDER_NAME" />
+                <ScalarProperty Name="P_DOB" ColumnName="P_DOB" />
+                <ScalarProperty Name="P_RELATION" ColumnName="P_RELATION" />
+                <ScalarProperty Name="P_INSSURANCE" ColumnName="P_INSSURANCE" />
+                <ScalarProperty Name="TEL_NO" ColumnName="TEL_NO" />
+                <ScalarProperty Name="CNIC_NO" ColumnName="CNIC_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_R_RECEIPT">
+            <EntityTypeMapping TypeName="Pathology_dbModel.TBL_R_RECEIPT">
+              <MappingFragment StoreEntitySet="TBL_R_RECEIPT">
+                <ScalarProperty Name="org_id" ColumnName="org_id" />
+                <ScalarProperty Name="user_date" ColumnName="user_date" />
+                <ScalarProperty Name="rec_datetime" ColumnName="rec_datetime" />
+                <ScalarProperty Name="R_ID" ColumnName="R_ID" />
+                <ScalarProperty Name="RCPT_DATE" ColumnName="RCPT_DATE" />
+                <ScalarProperty Name="HPTL_ID" ColumnName="HPTL_ID" />
+                <ScalarProperty Name="DEPT_ID" ColumnName="DEPT_ID" />
+                <ScalarProperty Name="MR_NO" ColumnName="MR_NO" />
+                <ScalarProperty Name="TEEATMNT_ID" ColumnName="TEEATMNT_ID" />
+                <ScalarProperty Name="CONSULTANT_ID" ColumnName="CONSULTANT_ID" />
+                <ScalarProperty Name="PAYMENT_ID" ColumnName="PAYMENT_ID" />
+                <ScalarProperty Name="PAYMENT_AMOUNT" ColumnName="PAYMENT_AMOUNT" />
+                <ScalarProperty Name="R_LOGIC_ID" ColumnName="R_LOGIC_ID" />
+                <ScalarProperty Name="R_LOGIC_DATE" ColumnName="R_LOGIC_DATE" />
+                <ScalarProperty Name="HPTL" ColumnName="HPTL" />
+                <ScalarProperty Name="P_TYPE" ColumnName="P_TYPE" />
+                <ScalarProperty Name="USER_PR" ColumnName="USER_PR" />
+                <ScalarProperty Name="MAG_PR" ColumnName="MAG_PR" />
+                <ScalarProperty Name="PANEL" ColumnName="PANEL" />
+                <ScalarProperty Name="PANEL_FEE" ColumnName="PANEL_FEE" />
+                <ScalarProperty Name="CONST_TYPE" ColumnName="CONST_TYPE" />
+                <ScalarProperty Name="PAID_YN" ColumnName="PAID_YN" />
+                <ScalarProperty Name="SHARE_AMOUNT" ColumnName="SHARE_AMOUNT" />
+                <ScalarProperty Name="TOKEN" ColumnName="TOKEN" />
+                <ScalarProperty Name="PAY_DATE" ColumnName="PAY_DATE" />
+                <ScalarProperty Name="APP_YN" ColumnName="APP_YN" />
+                <ScalarProperty Name="APP_DATE" ColumnName="APP_DATE" />
+                <ScalarProperty Name="APP_FEE" ColumnName="APP_FEE" />
+                <ScalarProperty Name="APP_TOKEN" ColumnName="APP_TOKEN" />
+                <ScalarProperty Name="APP_TIME" ColumnName="APP_TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_R_TEST">
+            <EntityTypeMapping TypeName="Pathology_dbModel.TBL_R_TEST">
+              <MappingFragment StoreEntitySet="TBL_R_TEST">
+                <ScalarProperty Name="TEST_ID" ColumnName="TEST_ID" />
+                <ScalarProperty Name="TEST_DATE" ColumnName="TEST_DATE" />
+                <ScalarProperty Name="MR_NO" ColumnName="MR_NO" />
+                <ScalarProperty Name="DISC_ID" ColumnName="DISC_ID" />
+                <ScalarProperty Name="DISC_AMOUNT" ColumnName="DISC_AMOUNT" />
+                <ScalarProperty Name="GRANT_TOTAL" ColumnName="GRANT_TOTAL" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="USER_DATE" ColumnName="USER_DATE" />
+                <ScalarProperty Name="REFUND_AMOUNT" ColumnName="REFUND_AMOUNT" />
+                <ScalarProperty Name="REF_DATE" ColumnName="REF_DATE" />
+                <ScalarProperty Name="CONST_ID" ColumnName="CONST_ID" />
+                <ScalarProperty Name="USER_PR" ColumnName="USER_PR" />
+                <ScalarProperty Name="MAG_PR" ColumnName="MAG_PR" />
+                <ScalarProperty Name="PANEL" ColumnName="PANEL" />
+                <ScalarProperty Name="DC_REFUND" ColumnName="DC_REFUND" />
+                <ScalarProperty Name="COMFRM" ColumnName="COMFRM" />
+                <ScalarProperty Name="SHIFT_ID" ColumnName="SHIFT_ID" />
+                <ScalarProperty Name="IPD_AMOUNT" ColumnName="IPD_AMOUNT" />
+                <ScalarProperty Name="IPD_NO" ColumnName="IPD_NO" />
+                <ScalarProperty Name="SAMLEYN" ColumnName="SAMLEYN" />
+                <ScalarProperty Name="LAB_NO" ColumnName="LAB_NO" />
+                <ScalarProperty Name="GRANT_TOTALP" ColumnName="GRANT_TOTALP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_USER_D">
+            <EntityTypeMapping TypeName="Pathology_dbModel.TBL_USER_D">
+              <MappingFragment StoreEntitySet="TBL_USER_D">
+                <ScalarProperty Name="ORG" ColumnName="ORG" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="USER_PASSWORD" ColumnName="USER_PASSWORD" />
+                <ScalarProperty Name="DEP_CODE" ColumnName="DEP_CODE" />
+                <ScalarProperty Name="CMP_CODE" ColumnName="CMP_CODE" />
+                <ScalarProperty Name="USERS" ColumnName="USERS" />
+                <ScalarProperty Name="MAG_ACT" ColumnName="MAG_ACT" />
+                <ScalarProperty Name="R_ACTIVE" ColumnName="R_ACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Visit">
+            <EntityTypeMapping TypeName="Pathology_dbModel.View_Visit">
+              <MappingFragment StoreEntitySet="View_Visit">
+                <ScalarProperty Name="CON_JOB_ID" ColumnName="CON_JOB_ID" />
+                <ScalarProperty Name="CON_NAME" ColumnName="CON_NAME" />
+                <ScalarProperty Name="CON_FEE" ColumnName="CON_FEE" />
+                <ScalarProperty Name="CD" ColumnName="CD" />
+                <ScalarProperty Name="CTFEE" ColumnName="CTFEE" />
+                <ScalarProperty Name="DEGREE" ColumnName="DEGREE" />
+                <ScalarProperty Name="ER_FEE" ColumnName="ER_FEE" />
+                <ScalarProperty Name="SP_VISIT" ColumnName="SP_VISIT" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="FELLOW_UP" ColumnName="FELLOW_UP" />
+                <ScalarProperty Name="DESG" ColumnName="DESG" />
+                <ScalarProperty Name="DOC_SHARE" ColumnName="DOC_SHARE" />
+                <ScalarProperty Name="DEP_ID" ColumnName="DEP_ID" />
+                <ScalarProperty Name="R_ID" ColumnName="R_ID" />
+                <ScalarProperty Name="RCPT_DATE" ColumnName="RCPT_DATE" />
+                <ScalarProperty Name="HPTL_ID" ColumnName="HPTL_ID" />
+                <ScalarProperty Name="DEPT_ID" ColumnName="DEPT_ID" />
+                <ScalarProperty Name="MR_NO" ColumnName="MR_NO" />
+                <ScalarProperty Name="TEEATMNT_ID" ColumnName="TEEATMNT_ID" />
+                <ScalarProperty Name="CONSULTANT_ID" ColumnName="CONSULTANT_ID" />
+                <ScalarProperty Name="PAYMENT_ID" ColumnName="PAYMENT_ID" />
+                <ScalarProperty Name="PAYMENT_AMOUNT" ColumnName="PAYMENT_AMOUNT" />
+                <ScalarProperty Name="R_LOGIC_ID" ColumnName="R_LOGIC_ID" />
+                <ScalarProperty Name="R_LOGIC_DATE" ColumnName="R_LOGIC_DATE" />
+                <ScalarProperty Name="HPTL" ColumnName="HPTL" />
+                <ScalarProperty Name="P_TYPE" ColumnName="P_TYPE" />
+                <ScalarProperty Name="USER_PR" ColumnName="USER_PR" />
+                <ScalarProperty Name="MAG_PR" ColumnName="MAG_PR" />
+                <ScalarProperty Name="PANEL" ColumnName="PANEL" />
+                <ScalarProperty Name="PANEL_FEE" ColumnName="PANEL_FEE" />
+                <ScalarProperty Name="CONST_TYPE" ColumnName="CONST_TYPE" />
+                <ScalarProperty Name="PAID_YN" ColumnName="PAID_YN" />
+                <ScalarProperty Name="SHARE_AMOUNT" ColumnName="SHARE_AMOUNT" />
+                <ScalarProperty Name="TOKEN" ColumnName="TOKEN" />
+                <ScalarProperty Name="PAY_DATE" ColumnName="PAY_DATE" />
+                <ScalarProperty Name="APP_YN" ColumnName="APP_YN" />
+                <ScalarProperty Name="APP_DATE" ColumnName="APP_DATE" />
+                <ScalarProperty Name="APP_FEE" ColumnName="APP_FEE" />
+                <ScalarProperty Name="APP_TOKEN" ColumnName="APP_TOKEN" />
+                <ScalarProperty Name="APP_TIME" ColumnName="APP_TIME" />
+                <ScalarProperty Name="FAMILY_NO" ColumnName="FAMILY_NO" />
+                <ScalarProperty Name="TDATE" ColumnName="TDATE" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS1" />
+                <ScalarProperty Name="STREET_ADDRESS2" ColumnName="STREET_ADDRESS2" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="POSTAL_CODE" ColumnName="POSTAL_CODE" />
+                <ScalarProperty Name="PHONE_NUMBER1" ColumnName="PHONE_NUMBER1" />
+                <ScalarProperty Name="PHONE_NUMBER2" ColumnName="PHONE_NUMBER2" />
+                <ScalarProperty Name="CREDIT_LIMIT" ColumnName="CREDIT_LIMIT" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="ADMINTOTAL" ColumnName="ADMINTOTAL" />
+                <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+                <ScalarProperty Name="F_NAME" ColumnName="F_NAME" />
+                <ScalarProperty Name="PANEL_G" ColumnName="PANEL_G" />
+                <ScalarProperty Name="ADDMISSIONID" ColumnName="ADDMISSIONID" />
+                <ScalarProperty Name="PMNHP_NO" ColumnName="PMNHP_NO" />
+                <ScalarProperty Name="PROCEDUREGROUP" ColumnName="PROCEDUREGROUP" />
+                <ScalarProperty Name="PATIENTTYPE" ColumnName="PATIENTTYPE" />
+                <ScalarProperty Name="PROTOTAL" ColumnName="PROTOTAL" />
+                <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+                <ScalarProperty Name="NIC" ColumnName="NIC" />
+                <ScalarProperty Name="DATEOFBIRTH" ColumnName="DATEOFBIRTH" />
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+                <ScalarProperty Name="EMG_NAME" ColumnName="EMG_NAME" />
+                <ScalarProperty Name="EMG_CONTACT" ColumnName="EMG_CONTACT" />
+                <ScalarProperty Name="EMG_RELATION" ColumnName="EMG_RELATION" />
+                <ScalarProperty Name="EMG_HOME" ColumnName="EMG_HOME" />
+                <ScalarProperty Name="EMP_CODE" ColumnName="EMP_CODE" />
+                <ScalarProperty Name="EMP_NAME" ColumnName="EMP_NAME" />
+                <ScalarProperty Name="EMP_DESG" ColumnName="EMP_DESG" />
+                <ScalarProperty Name="EMP_CONTACT" ColumnName="EMP_CONTACT" />
+                <ScalarProperty Name="EMP_DEPART" ColumnName="EMP_DEPART" />
+                <ScalarProperty Name="EMP_ADDRESS" ColumnName="EMP_ADDRESS" />
+                <ScalarProperty Name="POLICY_ID" ColumnName="POLICY_ID" />
+                <ScalarProperty Name="EFFECT_DATE" ColumnName="EFFECT_DATE" />
+                <ScalarProperty Name="P_GROUP" ColumnName="P_GROUP" />
+                <ScalarProperty Name="P_HOLDER_NAME" ColumnName="P_HOLDER_NAME" />
+                <ScalarProperty Name="P_DOB" ColumnName="P_DOB" />
+                <ScalarProperty Name="P_RELATION" ColumnName="P_RELATION" />
+                <ScalarProperty Name="P_INSSURANCE" ColumnName="P_INSSURANCE" />
+                <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+                <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+                <ScalarProperty Name="PRY" ColumnName="PRY" />
+                <ScalarProperty Name="TEL_NO" ColumnName="TEL_NO" />
+                <ScalarProperty Name="CNIC_NO" ColumnName="CNIC_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ORGINATION">
+            <EntityTypeMapping TypeName="Pathology_dbModel.TBL_ORGINATION">
+              <MappingFragment StoreEntitySet="TBL_ORGINATION">
+                <ScalarProperty Name="ORG_HEAD" ColumnName="ORG_HEAD" />
+                <ScalarProperty Name="ORG_BARCH" ColumnName="ORG_BARCH" />
+                <ScalarProperty Name="ORG_CODE" ColumnName="ORG_CODE" />
+                <ScalarProperty Name="ORG_C" ColumnName="ORG_C" />
+                <ScalarProperty Name="ORG_B" ColumnName="ORG_B" />
+                <ScalarProperty Name="ORG_A" ColumnName="ORG_A" />
+                <ScalarProperty Name="ORG_EMAIL" ColumnName="ORG_EMAIL" />
+                <ScalarProperty Name="ORG_VISSION" ColumnName="ORG_VISSION" />
+                <ScalarProperty Name="ORG_LOGO" ColumnName="ORG_LOGO" />
+                <ScalarProperty Name="ORG_LOCATION" ColumnName="ORG_LOCATION" />
+                <ScalarProperty Name="ORG_PHONE" ColumnName="ORG_PHONE" />
+                <ScalarProperty Name="ORG_ADDRESS" ColumnName="ORG_ADDRESS" />
+                <ScalarProperty Name="ORG_AVBRIVATION" ColumnName="ORG_AVBRIVATION" />
+                <ScalarProperty Name="ORGNAME" ColumnName="ORGNAME" />
+                <ScalarProperty Name="ORG_ID" ColumnName="ORG_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_PAY_MAST">
+            <EntityTypeMapping TypeName="Pathology_dbModel.TBL_PAY_MAST">
+              <MappingFragment StoreEntitySet="TBL_PAY_MAST">
+                <ScalarProperty Name="EOBI_STATUS" ColumnName="EOBI_STATUS" />
+                <ScalarProperty Name="EMP_TYPE" ColumnName="EMP_TYPE" />
+                <ScalarProperty Name="SOCIAL_AMT" ColumnName="SOCIAL_AMT" />
+                <ScalarProperty Name="DRYN" ColumnName="DRYN" />
+                <ScalarProperty Name="EOBI_R_DATE" ColumnName="EOBI_R_DATE" />
+                <ScalarProperty Name="EOBI_YEAR" ColumnName="EOBI_YEAR" />
+                <ScalarProperty Name="EOBI_MON" ColumnName="EOBI_MON" />
+                <ScalarProperty Name="ENT_SYSDATE" ColumnName="ENT_SYSDATE" />
+                <ScalarProperty Name="DRIVE_LINCES" ColumnName="DRIVE_LINCES" />
+                <ScalarProperty Name="DAYCARE_CHARGES" ColumnName="DAYCARE_CHARGES" />
+                <ScalarProperty Name="DAY_CAREYN" ColumnName="DAY_CAREYN" />
+                <ScalarProperty Name="HOSTEL_CHARGES" ColumnName="HOSTEL_CHARGES" />
+                <ScalarProperty Name="HOSTELYN" ColumnName="HOSTELYN" />
+                <ScalarProperty Name="SIGN" ColumnName="SIGN" />
+                <ScalarProperty Name="PRIVATE_PRACTICES" ColumnName="PRIVATE_PRACTICES" />
+                <ScalarProperty Name="MED_ALLIED" ColumnName="MED_ALLIED" />
+                <ScalarProperty Name="DOCYN" ColumnName="DOCYN" />
+                <ScalarProperty Name="RSG_CODE" ColumnName="RSG_CODE" />
+                <ScalarProperty Name="FEE" ColumnName="FEE" />
+                <ScalarProperty Name="BANK" ColumnName="BANK" />
+                <ScalarProperty Name="BIOT" ColumnName="BIOT" />
+                <ScalarProperty Name="APPL" ColumnName="APPL" />
+                <ScalarProperty Name="DOC" ColumnName="DOC" />
+                <ScalarProperty Name="S_CARD" ColumnName="S_CARD" />
+                <ScalarProperty Name="RWAL_FOUN" ColumnName="RWAL_FOUN" />
+                <ScalarProperty Name="D_NAME" ColumnName="D_NAME" />
+                <ScalarProperty Name="C_NAME" ColumnName="C_NAME" />
+                <ScalarProperty Name="E_DI" ColumnName="E_DI" />
+                <ScalarProperty Name="SECURTY" ColumnName="SECURTY" />
+                <ScalarProperty Name="PKHORS" ColumnName="PKHORS" />
+                <ScalarProperty Name="EMPARE" ColumnName="EMPARE" />
+                <ScalarProperty Name="CVCODE" ColumnName="CVCODE" />
+                <ScalarProperty Name="RSGDAYS" ColumnName="RSGDAYS" />
+                <ScalarProperty Name="JOINSAL" ColumnName="JOINSAL" />
+                <ScalarProperty Name="PBINCR" ColumnName="PBINCR" />
+                <ScalarProperty Name="PBTIME" ColumnName="PBTIME" />
+                <ScalarProperty Name="XRDATE" ColumnName="XRDATE" />
+                <ScalarProperty Name="XCDATE" ColumnName="XCDATE" />
+                <ScalarProperty Name="XADATE" ColumnName="XADATE" />
+                <ScalarProperty Name="PNCEXP" ColumnName="PNCEXP" />
+                <ScalarProperty Name="PNCREG" ColumnName="PNCREG" />
+                <ScalarProperty Name="INCHARGE" ColumnName="INCHARGE" />
+                <ScalarProperty Name="FCTYPE" ColumnName="FCTYPE" />
+                <ScalarProperty Name="PFNDYN" ColumnName="PFNDYN" />
+                <ScalarProperty Name="ATT_YN" ColumnName="ATT_YN" />
+                <ScalarProperty Name="REBATE" ColumnName="REBATE" />
+                <ScalarProperty Name="EMPTIT" ColumnName="EMPTIT" />
+                <ScalarProperty Name="SHTYPE" ColumnName="SHTYPE" />
+                <ScalarProperty Name="FACEXP" ColumnName="FACEXP" />
+                <ScalarProperty Name="FACREG" ColumnName="FACREG" />
+                <ScalarProperty Name="PMDEXP" ColumnName="PMDEXP" />
+                <ScalarProperty Name="PMDREG" ColumnName="PMDREG" />
+                <ScalarProperty Name="NCODE" ColumnName="NCODE" />
+                <ScalarProperty Name="TCODE" ColumnName="TCODE" />
+                <ScalarProperty Name="MACCOD" ColumnName="MACCOD" />
+                <ScalarProperty Name="OLDCOD" ColumnName="OLDCOD" />
+                <ScalarProperty Name="EX" ColumnName="EX" />
+                <ScalarProperty Name="E3" ColumnName="E3" />
+                <ScalarProperty Name="E2" ColumnName="E2" />
+                <ScalarProperty Name="E1" ColumnName="E1" />
+                <ScalarProperty Name="BANK_ACC" ColumnName="BANK_ACC" />
+                <ScalarProperty Name="RSGTYP" ColumnName="RSGTYP" />
+                <ScalarProperty Name="EMMARI" ColumnName="EMMARI" />
+                <ScalarProperty Name="POSPRO" ColumnName="POSPRO" />
+                <ScalarProperty Name="POSDIS" ColumnName="POSDIS" />
+                <ScalarProperty Name="FACTD" ColumnName="FACTD" />
+                <ScalarProperty Name="PREPRO" ColumnName="PREPRO" />
+                <ScalarProperty Name="PREDIS" ColumnName="PREDIS" />
+                <ScalarProperty Name="PRETEH" ColumnName="PRETEH" />
+                <ScalarProperty Name="PREADD" ColumnName="PREADD" />
+                <ScalarProperty Name="EMPPRO" ColumnName="EMPPRO" />
+                <ScalarProperty Name="EMPDIS" ColumnName="EMPDIS" />
+                <ScalarProperty Name="EMPTEH" ColumnName="EMPTEH" />
+                <ScalarProperty Name="EMDPRO" ColumnName="EMDPRO" />
+                <ScalarProperty Name="EMDDIS" ColumnName="EMDDIS" />
+                <ScalarProperty Name="EMNATI" ColumnName="EMNATI" />
+                <ScalarProperty Name="FAX_NO" ColumnName="FAX_NO" />
+                <ScalarProperty Name="HEALTH" ColumnName="HEALTH" />
+                <ScalarProperty Name="CARDNO" ColumnName="CARDNO" />
+                <ScalarProperty Name="EMP_REF" ColumnName="EMP_REF" />
+                <ScalarProperty Name="ALI_DATE" ColumnName="ALI_DATE" />
+                <ScalarProperty Name="FACTYN" ColumnName="FACTYN" />
+                <ScalarProperty Name="EOBINO" ColumnName="EOBINO" />
+                <ScalarProperty Name="BELONG" ColumnName="BELONG" />
+                <ScalarProperty Name="CON_DATE" ColumnName="CON_DATE" />
+                <ScalarProperty Name="SOCIALNO" ColumnName="SOCIALNO" />
+                <ScalarProperty Name="CONYN" ColumnName="CONYN" />
+                <ScalarProperty Name="AUTOEXP" ColumnName="AUTOEXP" />
+                <ScalarProperty Name="WEEK_OFF" ColumnName="WEEK_OFF" />
+                <ScalarProperty Name="SHTIME_O" ColumnName="SHTIME_O" />
+                <ScalarProperty Name="SHTIME_I" ColumnName="SHTIME_I" />
+                <ScalarProperty Name="SHIFT_DATE" ColumnName="SHIFT_DATE" />
+                <ScalarProperty Name="OVERGB" ColumnName="OVERGB" />
+                <ScalarProperty Name="MESSDED" ColumnName="MESSDED" />
+                <ScalarProperty Name="EMPADD" ColumnName="EMPADD" />
+                <ScalarProperty Name="D_CODE" ColumnName="D_CODE" />
+                <ScalarProperty Name="SYS_DATE" ColumnName="SYS_DATE" />
+                <ScalarProperty Name="USTTY" ColumnName="USTTY" />
+                <ScalarProperty Name="USRID" ColumnName="USRID" />
+                <ScalarProperty Name="EOBIYN" ColumnName="EOBIYN" />
+                <ScalarProperty Name="SOCIALYN" ColumnName="SOCIALYN" />
+                <ScalarProperty Name="SALCODE" ColumnName="SALCODE" />
+                <ScalarProperty Name="APPYN" ColumnName="APPYN" />
+                <ScalarProperty Name="B_CODE" ColumnName="B_CODE" />
+                <ScalarProperty Name="AUTOTAX" ColumnName="AUTOTAX" />
+                <ScalarProperty Name="ETP_CODE" ColumnName="ETP_CODE" />
+                <ScalarProperty Name="CMP_CODE" ColumnName="CMP_CODE" />
+                <ScalarProperty Name="EOBI" ColumnName="EOBI" />
+                <ScalarProperty Name="STATION" ColumnName="STATION" />
+                <ScalarProperty Name="PAY_TYPE" ColumnName="PAY_TYPE" />
+                <ScalarProperty Name="RSG_DATE" ColumnName="RSG_DATE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="CITY_CODE" ColumnName="CITY_CODE" />
+                <ScalarProperty Name="INC_PAY" ColumnName="INC_PAY" />
+                <ScalarProperty Name="NET_SLRY" ColumnName="NET_SLRY" />
+                <ScalarProperty Name="TERMINAT" ColumnName="TERMINAT" />
+                <ScalarProperty Name="REC_DATE" ColumnName="REC_DATE" />
+                <ScalarProperty Name="EMP_ACCNO" ColumnName="EMP_ACCNO" />
+                <ScalarProperty Name="EMP_TAXNO" ColumnName="EMP_TAXNO" />
+                <ScalarProperty Name="INCOME_TAX" ColumnName="INCOME_TAX" />
+                <ScalarProperty Name="GROSS_SAL" ColumnName="GROSS_SAL" />
+                <ScalarProperty Name="JOIN_DATE" ColumnName="JOIN_DATE" />
+                <ScalarProperty Name="DEP_CODE" ColumnName="DEP_CODE" />
+                <ScalarProperty Name="EMP_PIC" ColumnName="EMP_PIC" />
+                <ScalarProperty Name="EMP_DESG" ColumnName="EMP_DESG" />
+                <ScalarProperty Name="ID_EXP" ColumnName="ID_EXP" />
+                <ScalarProperty Name="EMP_CAST" ColumnName="EMP_CAST" />
+                <ScalarProperty Name="EMP_SECT" ColumnName="EMP_SECT" />
+                <ScalarProperty Name="EMP_RELIGION" ColumnName="EMP_RELIGION" />
+                <ScalarProperty Name="EMP_POSADD" ColumnName="EMP_POSADD" />
+                <ScalarProperty Name="EMP_EMAIL" ColumnName="EMP_EMAIL" />
+                <ScalarProperty Name="EMP_PHONE" ColumnName="EMP_PHONE" />
+                <ScalarProperty Name="ID_CARD" ColumnName="ID_CARD" />
+                <ScalarProperty Name="BIRTH_DATE" ColumnName="BIRTH_DATE" />
+                <ScalarProperty Name="EMP_CELL" ColumnName="EMP_CELL" />
+                <ScalarProperty Name="SEX_MF" ColumnName="SEX_MF" />
+                <ScalarProperty Name="EMP_MNAME" ColumnName="EMP_MNAME" />
+                <ScalarProperty Name="EMP_FNAME" ColumnName="EMP_FNAME" />
+                <ScalarProperty Name="EMP_NAME" ColumnName="EMP_NAME" />
+                <ScalarProperty Name="EMP_CODE" ColumnName="EMP_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Pathology_dbModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Pathology_dbModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Pathology_dbModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Pathology_dbModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Pathology_dbModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Pathology_dbModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Pathology_dbModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Pathology_dbModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Pathology_dbModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="TBl_CONS_FEE">
+            <EntityTypeMapping TypeName="Pathology_dbModel.TBl_CONS_FEE">
+              <MappingFragment StoreEntitySet="TBl_CONS_FEE">
+                <ScalarProperty Name="fee_cons" ColumnName="fee_cons" />
+                <ScalarProperty Name="user_date" ColumnName="user_date" />
+                <ScalarProperty Name="fee_user" ColumnName="fee_user" />
+                <ScalarProperty Name="fee_org" ColumnName="fee_org" />
+                <ScalarProperty Name="fee_status" ColumnName="fee_status" />
+                <ScalarProperty Name="fee_Fee" ColumnName="fee_Fee" />
+                <ScalarProperty Name="fee_name" ColumnName="fee_name" />
+                <ScalarProperty Name="fee_id" ColumnName="fee_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_Gender">
+            <EntityTypeMapping TypeName="Pathology_dbModel.TBL_Gender">
+              <MappingFragment StoreEntitySet="TBL_Gender">
+                <ScalarProperty Name="G_status" ColumnName="G_status" />
+                <ScalarProperty Name="G_name" ColumnName="G_name" />
+                <ScalarProperty Name="G_id" ColumnName="G_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_MASTER_PROCEDURE">
+            <EntityTypeMapping TypeName="Pathology_dbModel.TBL_MASTER_PROCEDURE">
+              <MappingFragment StoreEntitySet="TBL_MASTER_PROCEDURE">
+                <ScalarProperty Name="MP_SHARED_USER_ID" ColumnName="MP_SHARED_USER_ID" />
+                <ScalarProperty Name="MP_SHARED_DATE" ColumnName="MP_SHARED_DATE" />
+                <ScalarProperty Name="MP_SHARED_PAID_STATUS" ColumnName="MP_SHARED_PAID_STATUS" />
+                <ScalarProperty Name="MP_SHARE_CONS" ColumnName="MP_SHARE_CONS" />
+                <ScalarProperty Name="MP_SHARE_AMOUNT" ColumnName="MP_SHARE_AMOUNT" />
+                <ScalarProperty Name="MP_CONS" ColumnName="MP_CONS" />
+                <ScalarProperty Name="MP_SHIFT_ID" ColumnName="MP_SHIFT_ID" />
+                <ScalarProperty Name="MP_SHIFT" ColumnName="MP_SHIFT" />
+                <ScalarProperty Name="MP_REM_PANEL" ColumnName="MP_REM_PANEL" />
+                <ScalarProperty Name="MP_PANEL_PAID" ColumnName="MP_PANEL_PAID" />
+                <ScalarProperty Name="MP_AMOUNT" ColumnName="MP_AMOUNT" />
+                <ScalarProperty Name="MP_PANEL" ColumnName="MP_PANEL" />
+                <ScalarProperty Name="MP_STATUS_USER_DATE" ColumnName="MP_STATUS_USER_DATE" />
+                <ScalarProperty Name="MP_STATUS_USER_ID" ColumnName="MP_STATUS_USER_ID" />
+                <ScalarProperty Name="MP_STATUS_DATE" ColumnName="MP_STATUS_DATE" />
+                <ScalarProperty Name="MP_STATUS" ColumnName="MP_STATUS" />
+                <ScalarProperty Name="MP_CLEAR_DATE" ColumnName="MP_CLEAR_DATE" />
+                <ScalarProperty Name="MP_USER_MPCODE" ColumnName="MP_USER_MPCODE" />
+                <ScalarProperty Name="MP_USER_ID" ColumnName="MP_USER_ID" />
+                <ScalarProperty Name="MP_USER_ORG" ColumnName="MP_USER_ORG" />
+                <ScalarProperty Name="MP_USER_dATE" ColumnName="MP_USER_dATE" />
+                <ScalarProperty Name="MP_BLALANCE" ColumnName="MP_BLALANCE" />
+                <ScalarProperty Name="MP_PIAD_AMOUNT" ColumnName="MP_PIAD_AMOUNT" />
+                <ScalarProperty Name="MP_GRANT_TOTAL" ColumnName="MP_GRANT_TOTAL" />
+                <ScalarProperty Name="MP_DIS_AMOUNT" ColumnName="MP_DIS_AMOUNT" />
+                <ScalarProperty Name="MP_DISCOUNT_PER" ColumnName="MP_DISCOUNT_PER" />
+                <ScalarProperty Name="MP_DISCOUNT_ID" ColumnName="MP_DISCOUNT_ID" />
+                <ScalarProperty Name="MP_NETAMOUNT" ColumnName="MP_NETAMOUNT" />
+                <ScalarProperty Name="MR" ColumnName="MR" />
+                <ScalarProperty Name="MP_DATE" ColumnName="MP_DATE" />
+                <ScalarProperty Name="MP_CODE" ColumnName="MP_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_PROCEDURE_CAT">
+            <EntityTypeMapping TypeName="Pathology_dbModel.TBL_PROCEDURE_CAT">
+              <MappingFragment StoreEntitySet="TBL_PROCEDURE_CAT">
+                <ScalarProperty Name="org_id" ColumnName="org_id" />
+                <ScalarProperty Name="dept" ColumnName="dept" />
+                <ScalarProperty Name="user_Date" ColumnName="user_Date" />
+                <ScalarProperty Name="user_org" ColumnName="user_org" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="pc_name" ColumnName="pc_name" />
+                <ScalarProperty Name="pc_id" ColumnName="pc_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_MPROC_DETAIL">
+            <EntityTypeMapping TypeName="Pathology_dbModel.TBL_MPROC_DETAIL">
+              <MappingFragment StoreEntitySet="TBL_MPROC_DETAIL">
+                <ScalarProperty Name="MPD_AMOUNT" ColumnName="MPD_AMOUNT" />
+                <ScalarProperty Name="MPD_QTY" ColumnName="MPD_QTY" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="pro_discount" ColumnName="pro_discount" />
+                <ScalarProperty Name="pro_amount" ColumnName="pro_amount" />
+                <ScalarProperty Name="pro_id" ColumnName="pro_id" />
+                <ScalarProperty Name="MPD_order_id" ColumnName="MPD_order_id" />
+                <ScalarProperty Name="MPD_TECH_DATE" ColumnName="MPD_TECH_DATE" />
+                <ScalarProperty Name="MPD_TECH_ID" ColumnName="MPD_TECH_ID" />
+                <ScalarProperty Name="MPD_P_USERDATE" ColumnName="MPD_P_USERDATE" />
+                <ScalarProperty Name="MPD_P_USER_ID" ColumnName="MPD_P_USER_ID" />
+                <ScalarProperty Name="MPD_REFER" ColumnName="MPD_REFER" />
+                <ScalarProperty Name="MPD_SAMPLE_SATATUS" ColumnName="MPD_SAMPLE_SATATUS" />
+                <ScalarProperty Name="MPD_REPORT" ColumnName="MPD_REPORT" />
+                <ScalarProperty Name="MPD_DOC_REMARKS" ColumnName="MPD_DOC_REMARKS" />
+                <ScalarProperty Name="MPD_DOC_DATE" ColumnName="MPD_DOC_DATE" />
+                <ScalarProperty Name="MPD_DOC_ID" ColumnName="MPD_DOC_ID" />
+                <ScalarProperty Name="MPD_DOCYN" ColumnName="MPD_DOCYN" />
+                <ScalarProperty Name="MPD_PERFORMED" ColumnName="MPD_PERFORMED" />
+                <ScalarProperty Name="MPD_CAT" ColumnName="MPD_CAT" />
+                <ScalarProperty Name="MPD_LAB_NO" ColumnName="MPD_LAB_NO" />
+                <ScalarProperty Name="MPD_USER_NAME" ColumnName="MPD_USER_NAME" />
+                <ScalarProperty Name="MPD_USER_DATE" ColumnName="MPD_USER_DATE" />
+                <ScalarProperty Name="MPD_USER_ORG" ColumnName="MPD_USER_ORG" />
+                <ScalarProperty Name="MPD_user_id" ColumnName="MPD_user_id" />
+                <ScalarProperty Name="MPD_SAMPLE_YN" ColumnName="MPD_SAMPLE_YN" />
+                <ScalarProperty Name="MPD_SAMPLE_ID" ColumnName="MPD_SAMPLE_ID" />
+                <ScalarProperty Name="MR" ColumnName="MR" />
+                <ScalarProperty Name="MP_CODE" ColumnName="MP_CODE" />
+                <ScalarProperty Name="MPD_ID" ColumnName="MPD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_MASTER_PRO_ENTRY">
+            <EntityTypeMapping TypeName="Pathology_dbModel.TBL_MASTER_PRO_ENTRY">
+              <MappingFragment StoreEntitySet="TBL_MASTER_PRO_ENTRY">
+                <ScalarProperty Name="PRO_STATE" ColumnName="PRO_STATE" />
+                <ScalarProperty Name="PRO_CONS" ColumnName="PRO_CONS" />
+                <ScalarProperty Name="pro_shift" ColumnName="pro_shift" />
+                <ScalarProperty Name="PRO_CODE" ColumnName="PRO_CODE" />
+                <ScalarProperty Name="PRO_PANEL_TYPE" ColumnName="PRO_PANEL_TYPE" />
+                <ScalarProperty Name="PRO_SPECIMEN" ColumnName="PRO_SPECIMEN" />
+                <ScalarProperty Name="PRO_SAMPLE" ColumnName="PRO_SAMPLE" />
+                <ScalarProperty Name="PRO_MEASUREMENT_UNIT" ColumnName="PRO_MEASUREMENT_UNIT" />
+                <ScalarProperty Name="PRO_REFERANGE" ColumnName="PRO_REFERANGE" />
+                <ScalarProperty Name="PRO_USER_DATE" ColumnName="PRO_USER_DATE" />
+                <ScalarProperty Name="PRO_USER_ID" ColumnName="PRO_USER_ID" />
+                <ScalarProperty Name="PRO_ORG" ColumnName="PRO_ORG" />
+                <ScalarProperty Name="PRO_HEAD" ColumnName="PRO_HEAD" />
+                <ScalarProperty Name="PRO_TYPE" ColumnName="PRO_TYPE" />
+                <ScalarProperty Name="PRO_EXPENSE" ColumnName="PRO_EXPENSE" />
+                <ScalarProperty Name="PRO_PRICE" ColumnName="PRO_PRICE" />
+                <ScalarProperty Name="PRO_AMOUNT" ColumnName="PRO_AMOUNT" />
+                <ScalarProperty Name="PRO_DISCOUNT" ColumnName="PRO_DISCOUNT" />
+                <ScalarProperty Name="PRO_CAT" ColumnName="PRO_CAT" />
+                <ScalarProperty Name="PRO_NAME" ColumnName="PRO_NAME" />
+                <ScalarProperty Name="PRO_ID" ColumnName="PRO_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_R_PANEL">
+            <EntityTypeMapping TypeName="Pathology_dbModel.TBL_R_PANEL">
+              <MappingFragment StoreEntitySet="TBL_R_PANEL">
+                <ScalarProperty Name="panel_name" ColumnName="panel_name" />
+                <ScalarProperty Name="panel_id" ColumnName="panel_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="procedureReport" FunctionName="Pathology_dbModel.Store.procedureReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Pathology_dbModel.procedureReport_Result">
+                <ScalarProperty Name="MPD_ID" ColumnName="MPD_ID" />
+                <ScalarProperty Name="MP_CODE" ColumnName="MP_CODE" />
+                <ScalarProperty Name="MR" ColumnName="MR" />
+                <ScalarProperty Name="MPD_SAMPLE_ID" ColumnName="MPD_SAMPLE_ID" />
+                <ScalarProperty Name="MPD_SAMPLE_YN" ColumnName="MPD_SAMPLE_YN" />
+                <ScalarProperty Name="MPD_user_id" ColumnName="MPD_user_id" />
+                <ScalarProperty Name="MPD_USER_ORG" ColumnName="MPD_USER_ORG" />
+                <ScalarProperty Name="MPD_USER_DATE" ColumnName="MPD_USER_DATE" />
+                <ScalarProperty Name="MPD_USER_NAME" ColumnName="MPD_USER_NAME" />
+                <ScalarProperty Name="MPD_LAB_NO" ColumnName="MPD_LAB_NO" />
+                <ScalarProperty Name="MPD_CAT" ColumnName="MPD_CAT" />
+                <ScalarProperty Name="MPD_PERFORMED" ColumnName="MPD_PERFORMED" />
+                <ScalarProperty Name="MPD_DOCYN" ColumnName="MPD_DOCYN" />
+                <ScalarProperty Name="MPD_DOC_ID" ColumnName="MPD_DOC_ID" />
+                <ScalarProperty Name="MPD_DOC_DATE" ColumnName="MPD_DOC_DATE" />
+                <ScalarProperty Name="MPD_DOC_REMARKS" ColumnName="MPD_DOC_REMARKS" />
+                <ScalarProperty Name="MPD_REPORT" ColumnName="MPD_REPORT" />
+                <ScalarProperty Name="MPD_SAMPLE_SATATUS" ColumnName="MPD_SAMPLE_SATATUS" />
+                <ScalarProperty Name="MPD_REFER" ColumnName="MPD_REFER" />
+                <ScalarProperty Name="MPD_P_USER_ID" ColumnName="MPD_P_USER_ID" />
+                <ScalarProperty Name="MPD_P_USERDATE" ColumnName="MPD_P_USERDATE" />
+                <ScalarProperty Name="MPD_TECH_ID" ColumnName="MPD_TECH_ID" />
+                <ScalarProperty Name="MPD_TECH_DATE" ColumnName="MPD_TECH_DATE" />
+                <ScalarProperty Name="MPD_order_id" ColumnName="MPD_order_id" />
+                <ScalarProperty Name="pro_id" ColumnName="pro_id" />
+                <ScalarProperty Name="pro_amount" ColumnName="pro_amount" />
+                <ScalarProperty Name="pro_discount" ColumnName="pro_discount" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="MPD_QTY" ColumnName="MPD_QTY" />
+                <ScalarProperty Name="MPD_AMOUNT" ColumnName="MPD_AMOUNT" />
+                <ScalarProperty Name="MP_CODE1" ColumnName="MP_CODE1" />
+                <ScalarProperty Name="MP_DATE" ColumnName="MP_DATE" />
+                <ScalarProperty Name="MR1" ColumnName="MR1" />
+                <ScalarProperty Name="MP_NETAMOUNT" ColumnName="MP_NETAMOUNT" />
+                <ScalarProperty Name="MP_DISCOUNT_ID" ColumnName="MP_DISCOUNT_ID" />
+                <ScalarProperty Name="MP_DISCOUNT_PER" ColumnName="MP_DISCOUNT_PER" />
+                <ScalarProperty Name="MP_DIS_AMOUNT" ColumnName="MP_DIS_AMOUNT" />
+                <ScalarProperty Name="MP_GRANT_TOTAL" ColumnName="MP_GRANT_TOTAL" />
+                <ScalarProperty Name="MP_PIAD_AMOUNT" ColumnName="MP_PIAD_AMOUNT" />
+                <ScalarProperty Name="MP_BLALANCE" ColumnName="MP_BLALANCE" />
+                <ScalarProperty Name="MP_USER_dATE" ColumnName="MP_USER_dATE" />
+                <ScalarProperty Name="MP_USER_ORG" ColumnName="MP_USER_ORG" />
+                <ScalarProperty Name="MP_USER_ID" ColumnName="MP_USER_ID" />
+                <ScalarProperty Name="MP_USER_MPCODE" ColumnName="MP_USER_MPCODE" />
+                <ScalarProperty Name="MP_CLEAR_DATE" ColumnName="MP_CLEAR_DATE" />
+                <ScalarProperty Name="MP_STATUS" ColumnName="MP_STATUS" />
+                <ScalarProperty Name="MP_STATUS_DATE" ColumnName="MP_STATUS_DATE" />
+                <ScalarProperty Name="MP_STATUS_USER_ID" ColumnName="MP_STATUS_USER_ID" />
+                <ScalarProperty Name="MP_STATUS_USER_DATE" ColumnName="MP_STATUS_USER_DATE" />
+                <ScalarProperty Name="MP_PANEL" ColumnName="MP_PANEL" />
+                <ScalarProperty Name="MP_AMOUNT" ColumnName="MP_AMOUNT" />
+                <ScalarProperty Name="MP_PANEL_PAID" ColumnName="MP_PANEL_PAID" />
+                <ScalarProperty Name="MP_REM_PANEL" ColumnName="MP_REM_PANEL" />
+                <ScalarProperty Name="MP_SHIFT" ColumnName="MP_SHIFT" />
+                <ScalarProperty Name="MP_SHIFT_ID" ColumnName="MP_SHIFT_ID" />
+                <ScalarProperty Name="MP_CONS" ColumnName="MP_CONS" />
+                <ScalarProperty Name="MP_SHARE_AMOUNT" ColumnName="MP_SHARE_AMOUNT" />
+                <ScalarProperty Name="MP_SHARE_CONS" ColumnName="MP_SHARE_CONS" />
+                <ScalarProperty Name="MP_SHARED_PAID_STATUS" ColumnName="MP_SHARED_PAID_STATUS" />
+                <ScalarProperty Name="MP_SHARED_DATE" ColumnName="MP_SHARED_DATE" />
+                <ScalarProperty Name="MP_SHARED_USER_ID" ColumnName="MP_SHARED_USER_ID" />
+                <ScalarProperty Name="FAMILY_NO" ColumnName="FAMILY_NO" />
+                <ScalarProperty Name="TDATE" ColumnName="TDATE" />
+                <ScalarProperty Name="MR_NO" ColumnName="MR_NO" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS1" />
+                <ScalarProperty Name="STREET_ADDRESS2" ColumnName="STREET_ADDRESS2" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="POSTAL_CODE" ColumnName="POSTAL_CODE" />
+                <ScalarProperty Name="PHONE_NUMBER1" ColumnName="PHONE_NUMBER1" />
+                <ScalarProperty Name="PHONE_NUMBER2" ColumnName="PHONE_NUMBER2" />
+                <ScalarProperty Name="CREDIT_LIMIT" ColumnName="CREDIT_LIMIT" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="ADMINTOTAL" ColumnName="ADMINTOTAL" />
+                <ScalarProperty Name="DEPT_ID" ColumnName="DEPT_ID" />
+                <ScalarProperty Name="F_NAME" ColumnName="F_NAME" />
+                <ScalarProperty Name="PANEL_G" ColumnName="PANEL_G" />
+                <ScalarProperty Name="ADDMISSIONID" ColumnName="ADDMISSIONID" />
+                <ScalarProperty Name="PMNHP_NO" ColumnName="PMNHP_NO" />
+                <ScalarProperty Name="PROCEDUREGROUP" ColumnName="PROCEDUREGROUP" />
+                <ScalarProperty Name="PATIENTTYPE" ColumnName="PATIENTTYPE" />
+                <ScalarProperty Name="PROTOTAL" ColumnName="PROTOTAL" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="NIC" ColumnName="NIC" />
+                <ScalarProperty Name="DATEOFBIRTH" ColumnName="DATEOFBIRTH" />
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+                <ScalarProperty Name="EMG_NAME" ColumnName="EMG_NAME" />
+                <ScalarProperty Name="EMG_CONTACT" ColumnName="EMG_CONTACT" />
+                <ScalarProperty Name="EMG_RELATION" ColumnName="EMG_RELATION" />
+                <ScalarProperty Name="EMG_HOME" ColumnName="EMG_HOME" />
+                <ScalarProperty Name="EMP_CODE" ColumnName="EMP_CODE" />
+                <ScalarProperty Name="EMP_NAME" ColumnName="EMP_NAME" />
+                <ScalarProperty Name="EMP_DESG" ColumnName="EMP_DESG" />
+                <ScalarProperty Name="EMP_CONTACT" ColumnName="EMP_CONTACT" />
+                <ScalarProperty Name="EMP_DEPART" ColumnName="EMP_DEPART" />
+                <ScalarProperty Name="EMP_ADDRESS" ColumnName="EMP_ADDRESS" />
+                <ScalarProperty Name="POLICY_ID" ColumnName="POLICY_ID" />
+                <ScalarProperty Name="EFFECT_DATE" ColumnName="EFFECT_DATE" />
+                <ScalarProperty Name="P_GROUP" ColumnName="P_GROUP" />
+                <ScalarProperty Name="P_HOLDER_NAME" ColumnName="P_HOLDER_NAME" />
+                <ScalarProperty Name="P_DOB" ColumnName="P_DOB" />
+                <ScalarProperty Name="P_RELATION" ColumnName="P_RELATION" />
+                <ScalarProperty Name="P_INSSURANCE" ColumnName="P_INSSURANCE" />
+                <ScalarProperty Name="TEL_NO" ColumnName="TEL_NO" />
+                <ScalarProperty Name="CNIC_NO" ColumnName="CNIC_NO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Procedure_slip">
+            <EntityTypeMapping TypeName="Pathology_dbModel.Procedure_slip">
+              <MappingFragment StoreEntitySet="Procedure_slip">
+                <ScalarProperty Name="PRO_NAME" ColumnName="PRO_NAME" />
+                <ScalarProperty Name="Tel_no" ColumnName="Tel_no" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="First_name" ColumnName="First_name" />
+                <ScalarProperty Name="mr_no" ColumnName="mr_no" />
+                <ScalarProperty Name="mp_user_id" ColumnName="mp_user_id" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="mr" ColumnName="mr" />
+                <ScalarProperty Name="mp_code" ColumnName="mp_code" />
+                <ScalarProperty Name="mpd_id" ColumnName="mpd_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VIEW_LAB">
+            <EntityTypeMapping TypeName="Pathology_dbModel.VIEW_LAB">
+              <MappingFragment StoreEntitySet="VIEW_LAB">
+                <ScalarProperty Name="PRO_ID" ColumnName="PRO_ID" />
+                <ScalarProperty Name="PRO_CAT" ColumnName="PRO_CAT" />
+                <ScalarProperty Name="PRO_NAME" ColumnName="PRO_NAME" />
+                <ScalarProperty Name="MPD_SAMPLE_YN" ColumnName="MPD_SAMPLE_YN" />
+                <ScalarProperty Name="MPD_SAMPLE_ID" ColumnName="MPD_SAMPLE_ID" />
+                <ScalarProperty Name="MPD_USER_ID" ColumnName="MPD_USER_ID" />
+                <ScalarProperty Name="MP_CONS" ColumnName="MP_CONS" />
+                <ScalarProperty Name="MP_USER_ID" ColumnName="MP_USER_ID" />
+                <ScalarProperty Name="MP_USER_DATE" ColumnName="MP_USER_DATE" />
+                <ScalarProperty Name="MP_GRANT_TOTAL" ColumnName="MP_GRANT_TOTAL" />
+                <ScalarProperty Name="TEL_NO" ColumnName="TEL_NO" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS1" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="MR_NO" ColumnName="MR_NO" />
+                <ScalarProperty Name="TEST_ID" ColumnName="TEST_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,262 @@
+﻿@model IEnumerable<Project2.Models.TBL_USER_D>
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons" id="my"></i>
+                    </div>
+                    <p class="card-category">Number of Visite</p>
+                    <h3 class="card-title" >
+                    </h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons text-danger">warning</i>
+                        <a href="#pablo">Get More Space...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header card-header-success card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons" id="my">245</i>
+                    </div>
+                    <p class="card-category">Appointment</p>
+                    <h3 class="card-title"></h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">date_range</i> Last 24 Hours
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header card-header-danger card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons"  id="con"></i>
+                    </div>
+                    <p class="card-category">Consultants</p>
+                    <h3 class="card-title">
+                    </h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">local_offer</i> Tracked from Github
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header card-header-info card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">200</i>
+                    </div>
+                    <p class="card-category">Admissions</p>
+                    <h3 class="card-title"></h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">update</i> Just Updated
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">49</i>
+                    </div>
+                    <p class="card-category">Number of Surgery</p>
+                    <h3 class="card-title">
+                       
+
+                    </h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons text-danger">warning</i>
+                        <a href="#pablo">Get More Space...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header card-header-success card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">44</i>
+                    </div>
+                    <p class="card-category">Lab Investigation</p>
+                    <h3 class="card-title"></h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">date_range</i> Last 24 Hours
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header card-header-danger card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons"  id="dep"></i>
+                    </div>
+                    <p class="card-category">Departments</p>
+                    <h3 class="card-title"></h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">local_offer</i> Tracked from Github
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header card-header-info card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">2</i>
+                    </div>
+                    <p class="card-category">Discharge</p>
+                    <h3 class="card-title"></h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">schedule</i> Just Updated
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card card-chart">
+                <div class="card-header card-header-success">
+                    @*<div class="ct-chart" id="dailySalesChart"></div>*@
+                    <div id="chartContainer" style="height: 160px; width: 100%;"></div>
+                    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Daily Sales</h4>
+                    <p class="card-category">
+                        <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">access_time</i> updated 4 minutes ago
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-chart">
+                <div class="card-header card-header-warning">
+                    <div id="chartContainer" style="height: 160px; width: 100%;"></div>
+                    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Patient Subscriptions</h4>
+                    <p class="card-category">Last Campaign Performance</p>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">access_time</i> campaign sent 2 days ago
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-chart">
+                <div class="card-header card-header-danger">
+                    <div id="chartContainer" style="height: 160px; width: 100%;"></div>
+                    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Completed Tasks</h4>
+                    <p class="card-category">Last Campaign Performance</p>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">access_time</i> campaign sent 2 days ago
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        $.ajax({
+            url: "/Home/TotalVisit",
+            method: "GET",
+            datatype: "json",
+            success: function (data)
+            {
+
+                var data = JSON.parse(data);
+                $("#my").text(data);
+                console.log(data);
+
+            },
+            error: function (err) { console.error(err) }
+        })
+    });
+    $(document).ready(function () {
+        $.ajax({
+            url: "/Home/TotalConsultant",
+            method: "GET",
+            datatype: "json",
+            success: function (data)
+            {
+
+                var data = JSON.parse(data);
+                $("#con").text(data);
+                
+
+            },
+            error: function (err) { console.error(err) }
+        })
+    });
+
+    $(document).ready(function () {
+        $.ajax({
+            url: "/Home/TotalDep",
+            method: "GET",
+            datatype: "json",
+            success: function (data) {
+
+                var data = JSON.parse(data);
+                $("#dep").text(data);
+
+            },
+            error: function (err) { console.error(err) }
+        })
+    });
+</script>
+
+
+
