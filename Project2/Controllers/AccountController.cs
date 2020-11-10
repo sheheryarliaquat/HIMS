@@ -12,7 +12,7 @@ namespace Project2.Controllers
         Pathology_dbEntities1 db = new Pathology_dbEntities1();
         public ActionResult Index()
         {
-            return View();
+            return View(); // Return
         }
 
         public ActionResult Login()
