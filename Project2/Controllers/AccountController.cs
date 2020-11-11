@@ -20,6 +20,11 @@ namespace Project2.Controllers
             return View();
         }
 
+
+        public ActionResult Loginn()
+        {
+            return View();
+        }
         [HttpPost]
         public ActionResult Login(TBL_USER_D user)
         {
