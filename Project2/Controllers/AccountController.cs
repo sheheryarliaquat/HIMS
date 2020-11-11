@@ -21,7 +21,7 @@ namespace Project2.Controllers
         }
 
 
-        public ActionResult Loginn()
+        public ActionResult updte()
         {
             return View();
         }
