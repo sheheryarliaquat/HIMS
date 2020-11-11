@@ -12,7 +12,7 @@ namespace Project2.Controllers
         Pathology_dbEntities1 db = new Pathology_dbEntities1();
         public ActionResult Index()
         {
-            return View(); // Return
+            return View(); 
         }
 
         public ActionResult Login()
@@ -20,11 +20,6 @@ namespace Project2.Controllers
             return View();
         }
 
-
-        public ActionResult updtree()
-        {
-            return View();
-        }
         [HttpPost]
         public ActionResult Login(TBL_USER_D user)
         {
@@ -48,14 +43,18 @@ namespace Project2.Controllers
                 else if (usr.MAG_ACT == 2)
                 {
                     FormsAuthentication.SetAuthCookie(usr.USER_NAME, false);
-                    return RedirectToAction("StudentDashBaord", "Home");
+                    return RedirectToAction("ReceptionistDashboard", "Home", new { id = usr.USER_NAME });
+                }
+                else if (usr.MAG_ACT == 3)
+                {
+                    FormsAuthentication.SetAuthCookie(usr.USER_NAME, false);
+                    return RedirectToAction("PathHashDashboard", "Home", new { id = usr.USER_NAME });
                 }
                 else
                 {
                     FormsAuthentication.SetAuthCookie(usr.USER_NAME, false);
                     return RedirectToAction("staffDashboard", "Home", new { id = usr.USER_NAME });
                 }
-
             }
             else
             {
