@@ -21,7 +21,7 @@ namespace Project2.Controllers
         }
 
 
-        public ActionResult updte()
+        public ActionResult updtree()
         {
             return View();
         }
