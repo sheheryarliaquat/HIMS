@@ -16,7 +16,7 @@ namespace Project2.Controllers
     {
         Pathology_dbEntities1 db = new Pathology_dbEntities1();
         // GET: Home
-              int USerID;
+             // int USerID;
 
         public JsonResult TotalVisit()
         {

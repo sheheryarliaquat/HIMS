@@ -58,7 +58,7 @@ namespace Project2.Controllers
         public ActionResult SaveOrder(int mr, int cons, TBL_MPROC_DETAIL[] order)
         {
             string result = "Error! Order Is Not Complete!";
-            if (mr != null && cons != null)
+            if (mr != 0 && cons != 0)
             {
                 //int cutomerId = Guid.NewGuid();
                 TBL_MASTER_PROCEDURE model = new TBL_MASTER_PROCEDURE();
@@ -87,7 +87,7 @@ namespace Project2.Controllers
             result = "Success! Order Is Complete!";
             
             return Json(result, JsonRequestBehavior.AllowGet);
-            return RedirectToAction("reporting");
+            //return RedirectToAction("reporting");
 
         }
 
